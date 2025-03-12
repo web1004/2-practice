@@ -1,0 +1,53 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+body{
+  font-family: "Nanum Myeongjo", serif;
+}
+.container{
+  width: 800px;
+  margin: auto;
+}
+
+header{
+  height: 100px;
+  /* border: 1px solid #000; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* 높이가 있어야 함 */ 
+}
+header h1{text-transform: capitalize;}
+nav ul{
+  display: flex;
+  column-gap: 15px;
+  color: #444;
+}
+
+main{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+main img{
+  width: 100%;
+  height: auto;
+}
+main article{
+  background-color: #fff;
+  box-shadow: 3px 5px 15px rgba(0,0,0,0.2) ;
+  padding: 15px;
+}
+main article:first-child{
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 30px;
+  font-size: 36px;
+  font-weight: bold;
+}
+main article:nth-child(2){
+  /* grid-column: span 2;
+  grid-row: span 2; */
+  grid-area: span 2/span 2; /* 행/열 */
+  font-size: 28px;
+}

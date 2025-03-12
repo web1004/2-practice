@@ -1,0 +1,49 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  color: #222;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+section{
+  width: 1200px;
+  display: flex;
+  margin: auto;
+}
+.post{display: flex;}
+.post:nth-child(odd) {flex-direction: column;} /* 홀수 */
+.post:nth-child(even) {flex-direction: column-reverse;} /* 짝수 */
+
+.image{
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+.image img{
+  width: inherit;
+  height: inherit;
+  object-fit: cover; /* 부모의 가로,세로크기값을 상속받아야 함,부므크기에 꽉차면서 비율을 맞춤 */
+  transition: 0.3s;
+}
+.image img:hover{transform: scale(1.2);}
+
+.desc{
+  background-color: royalblue;
+  color: #fff;
+  text-align: center;
+  height: 300px;
+  display: flex;  /* 메인축의 기본방향은 가로 */
+  flex-direction: column;  /* 메인축이 세로방향으로 변경 */
+  justify-content: center;  /* 메인축이 세로로 변경되어서 수직정렬이 됨 */
+  align-items: center; /* 메인축이 세로로 변경되어서 수평정렬이 됨 */
+}
+/* 메인축의 방향속성값이 column이 되었을때는 메인축의 방향이 바뀌므로 justify-content와 align-items로 반대로 생각하면 된다. */
+
+.desc h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

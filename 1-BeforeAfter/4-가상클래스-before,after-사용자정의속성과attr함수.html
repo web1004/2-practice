@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>4-가상클래스-before,after-사용자정의속성과attr함수</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style4.css">
+</head>
+<body>
+  
+  <!--01 before after 가상클래스(사용자정의속성 attr함수를 이용한 알림 메세지) -->
+  <div class="notice" data-count="30">
+    <i class="fa-solid fa-bell"></i>
+  </div>
+  <hr>
+
+  <!--02 before after 가상클래스(사용자정의속성 attr함수를 이용한 Swap Hover Button) -->
+  <a href="#none" class="cool-btn" data-link="강의 신청하기" data-event="♥ 모든 강의 20%할인"></a>
+
+</body>
+</html>
+
+<!-- 
+:before :after 속성을 선택하는 content함수(attr)
+
+*HTML에서 사용자정의속성 : 제작자가 임의로 만든 속성
+<태그명 data-속성이름="값"> ▶data- 로 시작을 하고 뒤에 단어는 임의로 만든다.
+
+*CSS에서 사용사정의 속성 사용하기
+선택자:before{
+  content:'attr(사용자정의속성이름)';   
+}
+-->

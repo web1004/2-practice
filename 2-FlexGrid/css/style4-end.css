@@ -1,0 +1,103 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{box-sizing: border-box;}
+
+body {
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  padding: 60px 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.greeting {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  text-transform: capitalize;
+}
+.greeting a {border-bottom: 5px solid #0097e6;}
+.greeting a:hover{color: #0097e6;}
+.text-1 {
+  font-family: "Lobster", sans-serif;
+  font-weight: bold;
+  font-size: 65px;
+}
+.text-2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 28px;
+  color: darkgrey;
+}
+.photo img {
+  width: 100%;
+  height: auto;
+}
+
+h2{
+  font-family: "Anton", sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+}
+.intro {
+  color: #555;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+hr.divider {border-top: 1px solid #e5e5e5;}  /* 중간가로선 */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+}
+.skill {
+  border: 1px solid #e5e5e5;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.career {
+  display: flex;
+  column-gap: 15px;
+  border-bottom: 1px dotted #ccc;
+  padding: 15px 0;
+}
+.career .year {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.project {
+  border: 1px solid #e5e5e5;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 35px 100px;
+  margin-bottom: 30px;
+}
+.project .title {
+  font-weight: bold;
+  color: crimson;
+}
+.project .program{color: #999;}
+.project .detail {grid-column: span 2;}

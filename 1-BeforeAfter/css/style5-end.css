@@ -1,0 +1,65 @@
+@import url(reset.css); 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.heading{
+  width: 850px;
+  text-align: center;
+  font-size: 38px;
+  position: relative;
+}
+.heading:before,
+.heading:after{
+  position: absolute;
+  font-size: 110px;
+  color: #ddd;
+  top: -32px;
+}
+.heading:before{
+  content: '{';
+  left: 0;
+}
+.heading:after{
+  content: '}';
+  right: 0;
+}
+
+.heading span{
+  display: block;
+  font-weight: normal;
+  font-size: 30px;
+}
+.heading span:before{
+  content: '\f004';
+  font-family: fontawesome;
+  color: crimson;
+  margin-right: 5px;
+  display: inline-block; /* 애니메이션에서 작성한 transform속성은 inline에서는 적용되지 않음 */
+  animation: heart-ani 0.7s linear infinite; 
+}
+.heading em{
+  font-style: normal;  /* 이탤릭체 해지 */
+  color: crimson; 
+}
+
+/* Heart Animation */
+@keyframes heart-ani{
+  0%{
+    transform: scale(0.7);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(0.7);
+  }
+}

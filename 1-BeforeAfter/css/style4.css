@@ -1,0 +1,63 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body{
+  font-family: 'Noto Sans KR', sans-serif; 
+}
+
+/* 01 */
+.notice{
+  /* border: 1px solid red; */
+  display: inline-block;
+  position: relative;
+  margin-top: 100px;
+}
+.notice:before{
+  content: attr(data-count);
+  position: absolute;
+  top: -25px;
+  left: 70px;
+  background-color: red;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 50px;
+  text-align: center;
+  line-height: 95px;
+}
+.fa-solid{font-size: 150px;}
+
+/* 02 */
+.cool-btn{
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  line-height: 40px;
+  overflow: hidden;
+}
+.cool-btn:before,
+.cool-btn:after{
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  transition: 0.35s;
+}
+.cool-btn:before{
+  content: attr(data-link);
+  background-color: crimson;
+  top: 0;
+  left: 0;
+}
+.cool-btn:after{
+  content: attr(data-event);
+  background-color: royalblue;
+  top: 100%;
+  left: 0;
+}
+.cool-btn:hover:before{top: -100%;}
+.cool-btn:hover:after{top: 0;}
