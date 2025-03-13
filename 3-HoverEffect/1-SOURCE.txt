@@ -1,0 +1,11 @@
+monkey doll
+price : $12 → $10
+
+raccoon doll
+price : $42 → $40
+
+teddy bear
+price : $32 → $30
+
+view details
+

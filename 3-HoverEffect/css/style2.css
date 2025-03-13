@@ -1,0 +1,107 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: "Raleway", sans-serif;
+  color: #222;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h2{margin: 50px 0;}
+
+/* 가로툴팁 */
+.hcontainer{display: flex;}
+.icon{
+  /* border: 1px solid #000; */
+  width: 125px;
+  height: 125px;
+  position: relative;
+}
+.icon span{
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  width: 300px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.icon span:after{
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+}
+.icon:hover span{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* 
+단순하게 마우스 오버시에 툴팁이 나오게 할때는 opacity만 사용하고,
+마우스오버시 툴팁 영역안에서 마우스를 움직이게 할때는 opacity,visibility를 둘다 사용함
+또한 인터넷이 느린 경우 과정이 보일수 있다.
+마우스를 올리기전에 나타나는 트렌지션 잔상을 없을때도 사용함
+*/
+
+
+/* 세로툴팁 */
+.vcontainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-size: 13px;
+}
+.vcontainer .btn{
+  /* border: 1px solid #000; */
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+	background-color: #999;
+  color: #e8e8e8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.vcontainer .btn span{
+  position: absolute;
+  top: 0;
+  left: 120%;
+  background-color: #333;
+  font-size: 14px;
+	color: #fff;
+  padding: 4px 7px;
+  border-radius: 3px;
+  width: max-content;
+  opacity: 0;
+  transition: 0.35s;
+}
+.vcontainer .btn span:before{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #333;
+  left: -3px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.vcontainer .btn:hover span {opacity: 1;}

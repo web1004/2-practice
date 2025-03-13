@@ -1,0 +1,53 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: "Raleway", sans-serif;
+  color: #222;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.items{
+  /* border: 1px solid #000; */
+  display: flex;
+  text-align: center;
+}
+.item{
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  position: relative;  /* 부모설정 */
+}
+.caption{
+  position: absolute; /* 자식설정 */
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  width: inherit;
+  height: inherit;
+  color: #fff;
+  padding: 20px 10px;
+  box-sizing: border-box; /* padding,border를 포함 */
+  /* padding(안쪽여백)을 사용하면 크기가 늘어남 -> 늘어나기 않게 하려면 부모크기에 padding을 포함하도록 함 */
+  opacity: 0;
+  transition: 0.5s;
+}
+.item:hover .caption{opacity: 1;}
+
+.caption p:nth-of-type(1){margin: 20px 0;}
+.caption a{
+  display: inline-block;
+  background-color: teal;
+  padding: 7px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+.caption a:hover{
+  background-color: #fff;
+  color: teal;
+}

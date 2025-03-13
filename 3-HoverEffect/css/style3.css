@@ -1,0 +1,42 @@
+@import url(reset.css);
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.app-ui{
+  /* border: 1px solid red; */
+  position: relative;
+  width: 340px;
+  height: 640px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  background-color: #ddd;
+  transform: rotate(-30deg) skew(20deg);
+  transition: 0.5s
+}
+.app-ui:hover{box-shadow: -50px 100px 60px rgba(0,0,0,0.7);}
+.app-ui img{
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  transition: 0.5s;
+}
+.app-ui:hover img:nth-child(1){
+  transform: translate(40px, -40px);
+  opacity: 0.2;
+}
+.app-ui:hover img:nth-child(2){
+  transform: translate(80px, -80px);
+  opacity: 0.4;
+}
+.app-ui:hover img:nth-child(3){
+  transform: translate(120px, -120px);
+  opacity: 0.6;
+}
+.app-ui:hover img:nth-child(4){
+  transform: translate(160px, -160px);
+}
