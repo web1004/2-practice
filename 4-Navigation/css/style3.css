@@ -1,0 +1,119 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: "Raleway", sans-serif;
+  line-height: 26px;
+}
+
+.gallery{
+  height: 100vh;
+  display: flex;
+}
+.gallery li{
+  flex: 1;
+  position: relative;
+  height: 100%;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.gallery li:before{
+  content: attr(data-text);
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 1;
+  background-color: crimson;
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+.gallery li img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* img태그는 inline-block요소로 기본적인 마진이 존재함 */
+}
+.gallery li .content{
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 250px;
+  background-color: #709c17;
+  font-size: 15px;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  transition: 0.5s;
+}
+.gallery li .content:before{  /* 삼각형 */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #709c17;
+  transform: rotate(45deg) translateX(-50%)
+}
+.gallery li .content h2{
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 32px;
+}
+.gallery li .content p{
+  margin: 20px 0;
+  line-height: 20px;
+}
+.gallery li .content a{
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 5px 20px;
+	font-size: 13px;
+	text-transform: uppercase;
+  margin-top: 20px;
+}
+
+/* 처음에 보이는 화면 */
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay h3 {
+	font-size: 52px;
+  text-transform: capitalize;
+	line-height: 50px;
+	color: crimson;
+	text-align: center;
+}
+.overlay h3 span {
+	display: block;
+	font-weight: normal;
+	font-size: 30px;
+	color: #000;
+}
+
+/* Hover Effect */
+.gallery:hover li{flex: 1;}
+.gallery li:hover{flex: 3;}
+.gallery li:hover img{filter: grayscale();}
+.gallery li:hover .content{
+  bottom: 0;
+  transition-delay: 0.5s;
+}
+.gallery li:hover:before{
+  top: 0;
+  transition-delay: 1s;
+}
+.container:hover .overlay{display: none;}

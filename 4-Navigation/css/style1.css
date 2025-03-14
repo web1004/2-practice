@@ -1,0 +1,155 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: "Raleway", sans-serif;
+  color: #222;
+  background-color: #f4f4f4;
+  margin-top: 100px;
+  text-align: center;
+}
+hr{margin: 50px 0;}
+
+/* 01 */
+.gnb1 a{
+  /* border: 1px solid #000; */
+  display: block;
+  width: max-content;
+  margin: 20px auto;
+  font-size: 40px;
+  position: relative;
+}
+.btn1:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: crimson;
+  transition: 0.5s;
+}
+.btn1:hover:before{width: 100%;}
+
+.btn2:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background-color: crimson;
+  transition: 0.5s;
+}
+.btn2:hover:before{width: 100%;}
+
+.btn3:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 5px;
+  background-color: crimson;
+  transition: 0.5s;
+}
+.btn3:hover:before{left: 100%;}
+
+.btn4:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: crimson;
+  transition: 0.5s;
+}
+.btn4:hover:before{width: 100%;}
+
+.btn5:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background-color: crimson;
+  transition: 0.5s;
+}
+.btn5:hover:before{width: 0;}
+
+
+/* 02 */
+.gnb2{
+  width: 800px;
+  margin: auto;
+  /* background-color: #fff; */
+  border-radius: 10px;
+  padding: 50px 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.gnb2 ul{
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+}
+.gnb2 ul li a{
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+}
+.gnb2 ul li a:before{
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 0;
+  height: 6px;
+  background-color: deepskyblue;
+  z-index: -1;
+  transition: 0.5s;
+}
+.gnb2 ul li:hover a:before{width: 100%;}
+
+
+/* 03 */
+.gnb3{
+  width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.gnb3 a{
+  /* border: 1px solid #000; */
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  font-weight: 400;
+  overflow: hidden;
+}
+.gnb3 a:before,
+.gnb3 a:after{
+  content: attr(data-link);
+  position: absolute;
+  width: 100%;
+  transition: 0.35s;
+}
+.gnb3 a:before{
+  top: 0;
+  left: 0;
+}
+.gnb3 a:after{
+  top: 100%;
+  left: 0;
+  color: crimson;
+}
+.gnb3 a:hover:before{top: -100%;}
+.gnb3 a:hover:after{top: 0;}
