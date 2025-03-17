@@ -1,0 +1,65 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body{
+  background-color: #eee;
+  font-weight: 300;
+}
+hr{margin: 100px 0;}
+.headline{
+  text-align: center;	
+  text-transform: capitalize;
+  margin: 50px 0;
+}
+
+/* (1) */
+.portfolio1 .items {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.portfolio1 .items .item{
+  width: 270px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  transition: 1s;
+}
+.portfolio1 .items .item:nth-child(1) {background-image: url(../image/temp-01.png);}
+.portfolio1 .items .item:nth-child(2) {background-image: url(../image/temp-02.png);}
+.portfolio1 .items .item:nth-child(3) {background-image: url(../image/temp-03.png);}
+.portfolio1 .items .item:hover{background-position: bottom;}
+
+
+/* (2) */
+.portfolio2 .items{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.portfolio2 .items .item{
+  width: 270px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.portfolio2 .items .item a{
+  width: inherit;
+  height: inherit;
+}
+.portfolio2 .items .item img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  object-position: top;
+  transition: 1s;
+}
+.portfolio2 .items .item:hover img {object-position: bottom;}
