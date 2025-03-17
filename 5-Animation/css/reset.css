@@ -11,7 +11,6 @@
 *{  /* 전체선택자->모든 태그에 여백을 뺌 */
 	margin:0;
 	padding:0;	
-	/* box-sizing: border-box; */
 }
 html,body{
 	width:100%; 

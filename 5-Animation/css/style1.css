@@ -1,0 +1,39 @@
+@import url(reset.css);
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes circle-ani{
+  0%, 100%{
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50%{
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.circle span{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: gray;
+  border-radius: 50%;
+  animation: circle-ani 1s linear infinite;
+}
+.circle span:nth-child(1){
+  background-color: crimson;
+}
+.circle span:nth-child(2){
+  background-color: limegreen;
+  animation-delay: 0.2s;
+}
+.circle span:nth-child(3){
+  background-color: royalblue;
+  animation-delay: 0.4s;
+}

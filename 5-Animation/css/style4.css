@@ -1,0 +1,101 @@
+@import url(reset.css);
+
+body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+/* (1) */
+@keyframes title-ani{
+  0%{transform: translateX(0);}
+  100%{transform: translateX(-100%);}
+}
+
+.title-text{
+  border: 5px solid #000;
+  width: 1200px;
+  display: flex;
+  white-space: nowrap;  /* 텍스트가 가로로 나열되면서 밑으로 떨어지는것을 막기 위함 */
+  font-size: 32px;
+  font-weight: bold;
+  color: #9D9993;
+  overflow: hidden;
+}
+.title-text .title-wrap{
+  animation: title-ani 10s linear infinite;
+}
+.title-text:hover .title-wrap{
+  animation-play-state: paused;
+  color: #000;
+  cursor: pointer;
+}
+/* 
+animation-play-state: paused;
+animation-play-state: running;
+*/
+
+/* (2) */
+@keyframes row1-ani{  /* 왼쪽으로 흘러감 */
+  0%{transform: translateX(0);}
+  100%{transform: translateX(-50%);}
+}
+@keyframes row2-ani{  /* 오른쪽으로 흘러감 */
+  0%{transform: translateX(0);}
+  100%{transform: translateX(50%);}
+}
+
+.banner-slide{
+  border: 5px solid #000;
+  width: 1200px;
+  margin: 100px auto;
+  overflow: hidden;
+}
+.banner-slide .row{
+  position: relative;
+  width: inherit;
+  height: 90px;
+}
+.banner-slide .row .row-inner{
+  display: flex;
+  position: absolute;
+  height: 100%;
+  top: 0;
+}
+.banner-slide .row1 .row-inner{
+  left: 0;
+  animation: row1-ani 20s linear infinite alternate;
+}
+.banner-slide .row2 .row-inner{
+  right: 0;
+  animation: row2-ani 20s linear infinite alternate;
+}
+.banner-slide:hover .row-inner {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.banner-slide .row2{  /* 구분선 */
+  border-top: 1px solid #ccc;
+}
+.banner-slide .row:before,
+.banner-slide .row:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 200px;
+  height: 100px;
+  z-index: 2;
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+.banner-slide .row:before{left: 0;}
+.banner-slide .row:after{
+  right: 0;
+  transform: rotateY(180deg);
+}
+
+
+/* (3)-자바스크립를 이용한 방법 */

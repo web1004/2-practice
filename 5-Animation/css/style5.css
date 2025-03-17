@@ -1,0 +1,48 @@
+@import url(reset.css);
+
+@keyframes mouse-wheele-ani{
+  0% {transform: translateY(0);}
+	50% {transform: translateY(-10px);}
+	100% {transform: translateY(0);}
+}
+
+.mouse-scroll{
+  height: 100vh;
+  background-color: #333; 
+  position: relative;
+}
+.mouse{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+	transform: translateX(-50%);
+}
+.mouse .mouse-wheele{  /* 마우스모양 */
+  border: 2px solid #fff;
+  width: 32px;
+	height: 45px;
+  border-radius: 30px;
+  position: relative;
+  margin: auto;
+}
+.mouse .mouse-wheele:before{ /* 마우스휠 */
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 4px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  animation: mouse-wheele-ani 1.2s linear infinite;
+}
+.mouse span{
+  color: #fff;
+	font-size: 12px;
+}
+
+.container{
+  height: 800px;
+  background-color: aquamarine;
+}
