@@ -1,0 +1,105 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #878cd4;
+}
+.login{
+  /* border: 1px solid #000; */
+  width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+.login b{
+  display: block;
+  margin-bottom: 5px;
+}
+.login div{margin: 10px 0;}
+
+/* .login div input[type=text],
+.login div input[type=email],
+.login div input[type=password],
+.login div select,
+.login div textarea{
+
+} */
+
+/* is선택자:앞의 부모 경로를 공통으로 묶어줌 */
+.login div :is(input[type=text],input[type=email],input[type=password],select,textarea){
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.35s;
+}
+.login div textarea{height: 100px;}
+.login .user-check{
+  text-align: center;
+  font-size: 14px; 
+}
+.login button{
+  width: 100%;
+  border: none;
+  padding: 8px;
+  background-color: #3c388a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login div :is(input[type=text],input[type=email],input[type=password]){
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 22px;
+  text-indent: 30px;
+}
+.login div input[type=text]{background-image: url(../image/icon-user.svg);}
+.login div input[type=password]{background-image: url(../image/icon-password.svg);}
+.login div input[type=email]{background-image: url(../image/icon-email.svg);}
+
+/* Form Focus CSS(커서가 나올때 테두리에 색상주기  */
+.login div :is(input[type=text],input[type=email],input[type=password],select,textarea):focus{
+  border: 1px solid #3c388a;
+}
+
+/* Form Placeholder CSS */
+.login div :is(input[type=text],input[type=email],input[type=password],textarea)::placeholder{
+  color: #878cd4;
+}
+.login div :is(input[type=text],input[type=email],input[type=password],textarea):focus::placeholder{
+  opacity: 0;
+}
+
+/* Custom Checkbox & Radio */
+.login div input[name=event] {display: none;}  /* 기존의 체크박스는 안보이게 함 */
+.login div input[name=event]+em{  /* + 인접선택자 */
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(../image/checkbox-04.png);
+  background-position: left;
+  margin-right: 5px;
+  transform: translateY(3px);
+}
+.login div input[name=event]:checked + em{background-position: right;}
+
+.login div input[name=agree] {display: none;}  
+.login div input[name=agree]+em{  
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(../image/radio-01.png);
+  background-position: left;
+  margin-right: 5px;
+  transform: translateY(3px);
+}
+.login div input[name=agree]:checked+em{background-position: right;}
+.login div input[name=agree]:checked+em+span{color: #f94261;}

@@ -1,0 +1,79 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login{
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  padding: 25px;
+}
+.login h2{
+  font-weight: normal;
+  text-align: center;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+/* .login input[type=text],
+.login input[type=password],
+.login input[type=email]{
+
+} */
+
+.login input:not([type=submit]){
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none; /* 클릭하면 표시되는 브라우저 자체에 있는 검정아웃라인(border바깥쪽에 있는 outline) 안보이게 함 */
+  background-repeat: no-repeat;
+  background-position: left center;
+  /* padding-left: 30px; */
+  text-indent: 30px; /*들여쓰기(padding과 다르게 밀리지않음*/
+  transition: 0.35s;
+}
+.login input[type=text]{background-image: url(../image/icon-user.svg);}
+.login input[type=password]{background-image: url(../image/icon-password.svg);}
+.login input[type=email]{background-image: url(../image/icon-email.svg);}
+
+.login input:not([type=submit]):hover{
+  border: 1px solid skyblue;
+  box-shadow: 0 0 5px skyblue;
+}
+.login input[type=submit]{
+  background-color: royalblue;
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.35s;
+}
+.login input[type=submit]:hover{background-color: navy;}
+
+
+/* 
+.login input:before{
+  content: '글자삽입';
+} 
+
+*폼요소에는 가상클래스 before,after 를 가질수 없다. 
+단, label과 button은 가질수 있다.
+
+form
+fieldset
+label(가능)
+button(가능)
+input
+textarea
+select
+*/

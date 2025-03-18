@@ -1,0 +1,66 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f3542;
+}
+input, button{
+  outline: none;
+  border: none;
+}
+.login-form{width: 300px;}
+.login-form h2 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.item{
+  position: relative;
+  margin: 15px 0;
+}
+.item input{
+  display: block;
+  width: 100%;
+  border: 2px solid #ced6e0;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: transparent;
+}
+.item input + .item-text {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  color: #fff;
+  padding: 0 10px;
+  background-color: #2f3542; /* 글자가 올라갈때 배경색을 동일한 색상으로 채워서 선이 안보이게 함 */
+  pointer-events: none; /* 마우스이벤트를 받지 않아야 함-기본이 all */
+  transition: 0.25s;
+}
+.btn-login {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #1e90ff;
+	color: #fff;
+	opacity: 0.8;
+}
+.btn-login:hover {opacity: 1;}
+
+/* Focus Effect */
+.item input:focus + .item-text{
+  color: #1e90ff;
+  transform: translateY(-20px) scale(0.98);
+}

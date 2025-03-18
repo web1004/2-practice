@@ -1,0 +1,53 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item{
+  /* border: 1px solid #000; */
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.item input{
+  border: 1px solid lightgray;
+  width: inherit;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 50px;
+  box-sizing: border-box;
+  transition: 0.35s;
+}
+.item .fa-solid{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  font-size: 24px;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px 0 0 5px;
+  transition: 0.35s;
+}
+
+/* Focus Effect - 주로 폼요소에서 커서가 발생했을때 */
+.item input:focus{
+  border: 1px solid dodgerblue;
+  box-shadow: 0 0 5px dodgerblue;
+}
+.item input:focus +.fa-solid{  /* +(동위선택자 중 인접선택자) */
+  background-color: dodgerblue;
+  color: navy;
+}
+/* ::선택자 앞에 있는 콜론은 생략해서 1개만 쓸수 있지만  placeholder는 아직 적용이 되지않아서 2개 모두 사용해야 함*/
+.item input:focus::placeholder{opacity: 0;}

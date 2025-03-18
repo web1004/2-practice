@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>3-회원등록</title>
+  <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+
+  <form>
+    <div class="login">
+      <div>
+        <b>아이디</b>
+        <input type="text" name="id" placeholder="아이디입력">
+      </div>
+      <div>
+        <b>비밀번호</b>
+        <input type="password" name="pw" placeholder="비밀번호입력">
+      </div>
+      <div>
+        <b>이메일</b>
+        <input type="email" name="email" placeholder="이메일입력">
+      </div>
+      <div>
+        <select>
+          <option value="c01">회원 가입경로를 선택해주세요.</option>
+          <option value="c02">마케팅 정보에 의해 가입한 고객</option>
+          <option value="c03">제휴회사의 고객 또는 대리점 고객</option>
+          <option value="c04" selected>세미나/컨퍼런스 참여한 고객</option>
+          <option value="c05">기타</option>
+        </select>
+      </div>
+      <div>
+        <b>하고싶은말</b>
+        <textarea name="content" placeholder="200자 이내로 적어주세요!"></textarea>
+      </div>
+      <div class="user-check">
+        <label> <!--for가 없는 label로 input을 묶게 되면 글자를 클릭해도 체크가됨-->
+          <input type="checkbox" name="event"><em></em>이벤트 메일 수신에 동의합니다.
+        </label>
+      </div>
+      <div class="user-check">
+        개인정보 처리방침 약관 동의 
+        <label>
+          <input type="radio" value="yes" name="agree"><em></em><span>동의함</span>
+        </label>
+        <label>
+          <input type="radio" value="no" name="agree"><em></em><span>동의안함</span>
+        </label>
+      </div>
+      <!-- <input type="submit" value="회원가입 하기"> -->
+      <button>회원가입 하기</button> <!-- button태그는 type을 생략하면 기본이 submit --> 
+
+    </div>
+  </form>  
+</body>
+</html>
