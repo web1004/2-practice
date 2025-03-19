@@ -1,0 +1,129 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 150px;
+}
+
+/* (1) */
+.frame1{perspective: 500px;}  /* 원근감을 만드는 속성(0~1000)*/
+.frame1 div{
+  width: 400px;
+  height: 300px;
+  background: url(../image/bird.jpg) no-repeat;
+  background-size: cover;
+  /* transform: rotate(45deg); */
+  /* transform: rotateZ(45deg); */
+  transform: rotateX(20deg) rotateY(-20deg) rotateZ(5deg);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+}
+.frame1:hover div{
+  transform: rotate(0);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* (2) */
+.frame2{
+  border: 5px solid #000;
+  perspective: 500px;
+}
+.frame2 div{
+  width: 400px;
+  height: 400px;
+  background-color: yellowgreen;
+  /* transform: rotateX(45deg); */
+  transform: rotateY(45deg);
+}
+
+/* (3) */
+.frame3{
+  border: 5px solid #000;
+  display: flex;
+  gap: 50px;
+  /* perspective: 500px; */
+}
+.frame3 div{
+  width: 200px;
+  height: 200px;
+  background-color: yellowgreen;
+  transform: perspective(500px) rotateY(45deg);
+}
+
+/* (4) */
+.frame4{
+  border: 5px solid #000;
+  perspective: 500px;
+  /* perspective-origin: center center;  (기본) */
+  /* perspective-origin: center top; */
+  /* perspective-origin: center bottom; */
+  perspective-origin: bottom left;
+}
+.frame4 div{
+  width: 400px;
+  height: 400px;
+  background-color: yellowgreen;
+  transform: rotateX(45deg);
+}
+
+/* (5) */
+.frame5 {
+  border: 5px solid #000;
+  width: 200px;
+  height: 250px;
+  font-size: 36px;
+  text-transform: uppercase;
+  perspective: 700px;
+}
+.frame5 .card {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  transform-style: preserve-3d;  /* 부모로부터 받아 자신의 자식요소에 전달 */
+  transition: 0.5s;
+}
+.frame5:hover .card {transform: rotateY(180deg);}
+
+.frame5 .card div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frame5 .card .front {background-color: yellowgreen;}
+.frame5 .card .back {
+  background-color: gold;
+  transform: rotateY(180deg);  /* back은 y축으로 반전되어 있어야 함 */
+  backface-visibility: hidden;  /* 요소의 뒷면 숨기기 */
+}
+
+
+/* (6)명함 뒤집기 */
+.card-frame{
+  border: 5px solid #000;
+  width: 435px;
+  height: 260px;
+  perspective: 800px;
+}
+.card-frame:hover .card-items{transform: rotateX(180deg);}
+.card-items{
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+.card-items img{display: block;} /* img태그는 inline-block요소로 기본적인 마진이 있어서 없앰 */
+.card-item {position: absolute;}
+.card-item.back {
+  transform: rotateX(180deg); 
+  backface-visibility: hidden;
+}

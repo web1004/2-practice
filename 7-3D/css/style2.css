@@ -1,0 +1,61 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+*{box-sizing: border-box;}
+body{
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-item{
+  /* border: 5px solid #000; */
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+.card-item:hover .card {transform: rotateY(180deg);}
+
+.card{
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+.front img{  /* 이미지가 부모보다 클때 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card>div{
+  position: absolute;
+  height: 100%;
+}
+.back {
+  background-color: #222;
+  padding: 20px;
+	color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  transform: rotateY(180deg); 
+  backface-visibility: hidden;
+}
+.back .comment b{font-size: 32px;}
+.back .comment .sns{margin: 20px 0;}
+.back .comment .sns a {
+  display: inline-block;
+  border: 1px solid #fff;
+	width: 25px;
+	height: 25px;
+  line-height: 25px;
+}
+.btn-view {
+	background-color: yellowgreen;
+	padding: 7px;
+	border-radius: 5px;
+  display: block;
+}

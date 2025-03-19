@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>1-perspective</title>
+  <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+
+  <div class="frame1">
+    <div></div>
+  </div>
+
+  <div class="frame2">
+    <div></div>
+  </div>
+
+  <div class="frame3">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="frame4">
+    <div></div>
+  </div>
+
+  <div class="frame5">
+    <div class="card">
+      <div class="front">front</div>
+      <div class="back">back</div>
+    </div>
+  </div>
+
+  <div class="card-frame">
+    <div class="card-items">
+      <div class="card-item front">
+        <img src="image/name-card-front.png">
+      </div>
+      <div class="card-item back">
+        <img src="image/name-card-back.png">
+      </div>
+    </div>
+  </div>
+    
+</body>
+</html>
+
+<!-- 
+rotateX : x축을 기준으로 돌기
+rotateY : y축을 기준으로 돌기
+rotateZ : z축을 기준으로 돌기
+
+*perspective : 원근법(관점, 전망, 시각)
+- 멀리 떨어진 부분은 작게 보이고 가까운 부분은 크게 보이는 원근감
+- 값이 작으면 작을수록 원근감이 커짐
+- perspective 속성은 바로 아래의 자식 요소에게만 적용
+
+https://www.w3schools.com/cssref/playdemo.php?filename=playcss_perspective
+
+*perspective-orgin : 소실점의 왼쪽 오른쪽 치우침 조정
+
+ex) perspective-orgin: 20% 30%;
+ex) perspective-orgin: right top;
+기본값 perspective-orgin: 50% 50%;
+
+https://www.w3schools.com/cssref/playdemo.php?filename=playcss_perspective-origin
+
+
+*transform-style: preserve-3d
+- 자식요소에만 사용
+- perspective를 부모로부터 받아 자신의 자식요소에 전달
+
+*backface-visibility: hidden
+- 요소의 뒷면을 숨기기
+
+-->

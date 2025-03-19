@@ -28,7 +28,7 @@ section{
   align-items: center;
 }
 .login{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 360px;
 }
 .login-type h1{
@@ -47,8 +47,41 @@ section{
 }
 .btn:hover{opacity: 1;}
 
-.btn:nth-of-type(1){background: url(../image/logo-mobile.png) no-repeat 15px center #fff;}
+.btn:nth-of-type(1){
+  color: #222;
+  background: url(../image/logo-mobile.png) no-repeat 15px center #fff;
+}
 .btn:nth-of-type(2){background: url(../image/logo-email.png) no-repeat 15px center #898c9b;}
 .btn:nth-of-type(3){background: url(../image/logo-naver.png) no-repeat 15px center #11ce00}
 .btn:nth-of-type(4){background: url(../image/logo-facebook.png) no-repeat 15px center #0076fe;}
 .btn:nth-of-type(5){background: url(../image/logo-line.png) no-repeat 15px center #00C026;}
+
+/* 또는 */
+.or-text{
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+.or-text:before,
+.or-text:after{
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 43%;
+  height: 1px;
+  background-color: lightgray;
+
+}
+.or-text:before{left: 0;}
+.or-text:after{right: 0;}
+
+.login-footer p{
+  text-align: center;
+  margin-top: 15px;
+}
+.login-footer p a{
+  color: royalblue;
+  font-weight: 400;
+}
+.login-footer p a:hover{text-decoration: underline;}
