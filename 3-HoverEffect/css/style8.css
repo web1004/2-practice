@@ -63,3 +63,122 @@ hr{margin: 100px 0;}
   transition: 1s;
 }
 .portfolio2 .items .item:hover img {object-position: bottom;}
+
+/* (3) */
+.pc-mockup{
+  /* border: 1px solid #000; */
+  width: 700px;
+  height: 650px;
+  margin: auto;
+}
+.pc-mockup h1 {
+	text-align: center;
+	font-weight: 500;
+	font-size: 36px;
+	letter-spacing: -2px;
+	position: relative;
+	padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.pc-mockup h1:after {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 5px;
+	background-color: crimson;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+}
+.screen{
+  /* border: 1px solid red; */
+  height: 450px;
+  border-radius: 10px;
+	overflow: hidden;
+}
+.screen-frame {
+  /* border: 1px solid blue; */
+  width: inherit;  /* 700px */
+	height: 390px;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+.screen-logo {
+	height: 60px;
+	background-color: lightgray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.screen-logo img {width: 40px;}
+
+.stand{
+  border-bottom: 80px solid lightgray;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	height: 0;
+	width: 180px;
+	margin: auto;
+	position: relative;
+}
+.stand:before {  /* 위쪽 가로선 */
+	content: '';
+	position: absolute;
+	background-color: #b1b0b0;
+	height: 8px;
+	width: 153px;
+  clip-path: polygon(1% 0%, 99% 2%, 100% 100%, 0% 100%);
+  transform: translateX(-1.5px);
+}
+.stand:after {   /* 아래쪽 가로선 */
+	content: '';
+	position: absolute;
+	background-color: lightgray;
+	width: 220px;
+	height: 5px;
+	border-radius: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -85px;
+}
+
+.screen-frame .iframe-url{
+  border: 1px solid red;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.screen-frame .iframe-url img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	transition: 2s;
+}
+
+.caption-link {
+	background-color: LightSlateGray;
+	color: #fff;
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+	font-size: 12px;
+	padding: 5px 15px;
+	border-radius: 30px;
+	/* transform: translateY(100px); */
+	opacity: 0;
+	transition: 0.7s;
+	transition-delay: 0.5s;
+}
+
+.screen:hover .screen-frame .iframe-url img {
+	object-position: bottom;
+}
+.screen:hover .screen-frame .caption-link {
+	opacity: 1;
+	/* transform: translateY(0); */
+}
