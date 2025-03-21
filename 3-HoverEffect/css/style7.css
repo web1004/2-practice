@@ -1,11 +1,12 @@
 @import url(reset.css);
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
-* {
-	font-family: "Montserrat", sans-serif;
-	box-sizing: border-box;
+*{
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
 }
-body{
+
+body{ 
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -22,7 +23,7 @@ body{
   height: 260px;
   position: relative;
 }
-.card:after{
+.card:after{  /* 아래 그림자 */
   content: '';
   position: absolute;
   bottom: 0;
@@ -30,28 +31,25 @@ body{
   transform: translateX(-50%);
   width: 150px;
   height: 10px;
-  border-radius: 50%;
-  filter: blur(5px);
   background: radial-gradient(circle, #555, #fff);
+  filter: blur(5px);
   transition: 0.5s;
 }
 
-.card-box{
+.card-box{  /* clip-path:육각형 등의 모양만들기 */
   /* border: 1px solid red; */
   position: relative;
   width: 200px;
   height: 200px;
-  border-radius: 10px;
-  margin: 10px;
+  margin: auto;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  overflow: hidden;
   transition: 0.5s;
 }
-.card-box:before{
+.card-box:before{  /* 그라데이션 오버레이 */
   content: '';
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -66,6 +64,7 @@ body{
   height: inherit;
   object-fit: cover;
 }
+
 .card-box .content{
   position: absolute;
   top: 0;
@@ -96,7 +95,7 @@ body{
 .card:hover:after{
   width: 110px;
   height: 7px;
-  background: radial-gradient(circle,#999, #fff);
+  background: radial-gradient(circle, #999, #fff);
   filter: blur(3px);
 }
 .card:hover .card-box{transform: translateY(-20px);}
