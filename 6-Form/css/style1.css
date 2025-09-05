@@ -21,23 +21,24 @@ body{
   font-size: 30px;
   text-transform: capitalize;
 }
+
 /* .login input[type=text],
 .login input[type=password],
 .login input[type=email]{
 
-} */
+}  */
 
 .login input:not([type=submit]){
   width: 100%;
   margin: 10px 0;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
   border-radius: 3px;
+  border: 1px solid #ccc;
   outline: none; /* 클릭하면 표시되는 브라우저 자체에 있는 검정아웃라인(border바깥쪽에 있는 outline) 안보이게 함 */
   background-repeat: no-repeat;
   background-position: left center;
-  /* padding-left: 30px; */
+  /* padding-left: 30px; -> 안쪽여백이어서 오른쪽으로 밀림*/
   text-indent: 30px; /*들여쓰기(padding과 다르게 밀리지않음*/
   transition: 0.35s;
 }
@@ -49,6 +50,7 @@ body{
   border: 1px solid skyblue;
   box-shadow: 0 0 5px skyblue;
 }
+
 .login input[type=submit]{
   background-color: royalblue;
   width: 100%;
@@ -59,7 +61,6 @@ body{
   transition: 0.35s;
 }
 .login input[type=submit]:hover{background-color: navy;}
-
 
 /* 
 .login input:before{

@@ -10,12 +10,12 @@ body{
 
 section{
   width: 1200px;
-  display: flex;
   margin: auto;
+  display: flex;
 }
 .post{display: flex;}
-.post:nth-child(odd) {flex-direction: column;} /* 홀수 */
-.post:nth-child(even) {flex-direction: column-reverse;} /* 짝수 */
+.post:nth-child(odd) {flex-direction: column;} /* 홀수(2n+1) */
+.post:nth-child(even) {flex-direction: column-reverse;} /* 짝수(2n) */
 
 .image{
   width: 300px;
@@ -25,7 +25,7 @@ section{
 .image img{
   width: inherit;
   height: inherit;
-  object-fit: cover; /* 부모의 가로,세로크기값을 상속받아야 함,부므크기에 꽉차면서 비율을 맞춤 */
+  object-fit: cover;
   transition: 0.3s;
 }
 .image img:hover{transform: scale(1.2);}
@@ -35,12 +35,15 @@ section{
   color: #fff;
   text-align: center;
   height: 300px;
-  display: flex;  /* 메인축의 기본방향은 가로 */
-  flex-direction: column;  /* 메인축이 세로방향으로 변경 */
-  justify-content: center;  /* 메인축이 세로로 변경되어서 수직정렬이 됨 */
+  display: flex; /* 메인축의 기본방향은 가로 */
+  flex-direction: column; /* 메인축이 세로방향으로 변경 */
+  justify-content: center; /* 메인축이 세로로 변경되어서 수직정렬이 됨 */
   align-items: center; /* 메인축이 세로로 변경되어서 수평정렬이 됨 */
 }
-/* 메인축의 방향속성값이 column이 되었을때는 메인축의 방향이 바뀌므로 justify-content와 align-items로 반대로 생각하면 된다. */
+/* 
+-메인축의 방향이 row(기본)일때는 justify-content가 수평정렬이고, align-items가 수직정렬이다.
+-메인축의 방향 column(세로)일때는 메인축의 방향이 바뀌므로 justify-content가 수직정렬이고, align-items가 수평정렬이다. 
+*/
 
 .desc h2 {
   font-size: 24px;

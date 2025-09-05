@@ -35,7 +35,7 @@ body{
 .card>div h2 {
   font-size: 42px;
   text-transform: uppercase;
-  transform: translateZ(25px); /* z축: 앞으로 튀어나오게 함 */
+  transform: translateZ(25px);  /* z축: 앞으로 튀어나오게 함 */
 }
 .card>div .outline {
   position: absolute;

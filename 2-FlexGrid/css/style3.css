@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 @font-face {
   font-family: 'HakgyoansimChilpanjiugaeTTF-B';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimChilpanjiugaeTTF-B.woff2') format('woff2');
@@ -7,15 +8,16 @@
 }
 
 body{
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 18px;
   line-height: 1.5;
   color: #222;
 }
 
-section{   /* 가로 100% */
+main{
   height: 400px;
-  display: flex;
   margin-top: 100px;
+  display: flex;
 }
 .photo{
   flex: 1;
@@ -29,23 +31,22 @@ section{   /* 가로 100% */
 
 .promotion{
   flex: 1;
+  position: relative;
   background-color: #46515c;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 .banner-logo{
   position: absolute;
-  top: 50%;
-  left: -110px;
-  transform: translateY(-50%);
+  top: 50%; /* 요소의 중심이 가운데가 아니기 때문에 수직으로 정가운데 오지 않음 */
+  left: -100px;
+  transform: translateY(-50%); /* 50% 만틈 반대로 올라감 */
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   padding: 10px;
 }
-
 
 .heading{
   display: flex;
@@ -53,14 +54,13 @@ section{   /* 가로 100% */
   justify-content: center;
   align-items: flex-start;
   color: #fff;
-  /* padding-left: 100px; */
+  row-gap: 15px;
 }
 .heading h2{
   font-family: 'HakgyoansimChilpanjiugaeTTF-B';
   font-size: 40px;
   font-weight: 600;
 }
-.heading p{margin: 10px 0;}
 .heading p em{
   font-style: normal;
   background-color: #000;
@@ -73,12 +73,10 @@ section{   /* 가로 100% */
   color: #999;
 }
 .heading a.btn-event{
-  display: block;
   background-color: yellowgreen;
   border-radius: 30px;
   font-size: 15px;
   padding: 5px 15px;
-  margin-top: 20px;
-  transition: 0.5s;
+  transition: 0.35s;
 }
 .heading a.btn-event:hover{background-color: #e95f0e;}

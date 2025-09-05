@@ -1,0 +1,76 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
+body{ 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../image/snow-photo.jpg) no-repeat center/cover fixed;
+  /* background-size: cover; */
+  position: relative;
+}
+body:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+.search h1{
+  color: #fff;
+  font-size: 38px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.search input[type=search],
+.search input[type=submit]{
+  padding: 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  line-height: 1.2;
+}
+/*  
+문제 : 영문으로 입력했을때는 정상적인데, 한글로 입력했을때 틀어짐
+원인 : 각 브라우저의 기본글꼴 렌더링차이가 있기 때문에 발생함, 한글과 영문은 폰트의 
+baseline(글자가 앉는 기준선)이나 line-height값이 달라서 발생할수 있음
+해결 : 
+(1)영문/한글 모두 비슷한 비율을 가진 폰트를 지정해주면 위치의 차이가 거의 사라진다.
+한글과 영문의 글꼴(font-family)를 통일시켜준다.
+font-family: "Montserrat", "Noto Sans KR", sans-serif;
+(2)줄간격을 지정(line-height)
+font-size:15px;
+line-height:1.2; 또는 font-size와 같은 값 15px
+*/
+
+
+.search input[type=search]{
+  width: 350px;
+  border-radius: 40px 0 0 40px;
+  padding-left: 40px;
+  margin-right: -6px;
+}
+.search input[type=submit]{
+  width: 150px;
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+  background-color: orange;
+  color: #fff;
+  font-weight: 600;
+}
+.search input[type=submit]:hover{background-color: darkgoldenrod;}
+.search input[type=search]::placeholder{
+  font-size: 20px;
+  font-style: italic;
+  color: #999;
+}

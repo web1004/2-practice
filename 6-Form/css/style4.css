@@ -9,9 +9,10 @@ body{
   align-items: center;
   background-color: #2f3542;
 }
+
 input, button{
-  outline: none;
   border: none;
+  outline: none;
 }
 .login-form{width: 300px;}
 .login-form h2 {
@@ -37,7 +38,7 @@ input, button{
   color: #fff;
   background-color: transparent;
 }
-.item input + .item-text {
+.item input + .item-text{
   position: absolute;
   top: 8px;
   left: 15px;
@@ -47,20 +48,24 @@ input, button{
   pointer-events: none; /* 마우스이벤트를 받지 않아야 함-기본이 all */
   transition: 0.25s;
 }
-.btn-login {
-	display: block;
-	width: 100%;
-	padding: 10px;
+.btn-login{
+  display: block;
+  width: 100%;
+  padding: 10px;
 	border-radius: 5px;
 	cursor: pointer;
-	background-color: #1e90ff;
+  background-color: #1e90ff;
 	color: #fff;
-	opacity: 0.8;
+  text-transform: capitalize;
+	opacity: 0.7;
+  transition: 0.35s;
 }
 .btn-login:hover {opacity: 1;}
 
-/* Focus Effect */
 .item input:focus + .item-text{
   color: #1e90ff;
   transform: translateY(-20px) scale(0.98);
 }
+/* 문제 : 글자위가 아닌 오른쪽 빈 여백을 클릭해야 적용되고 있음 */
+
+

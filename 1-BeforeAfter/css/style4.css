@@ -1,16 +1,14 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-body{
-  font-family: 'Noto Sans KR', sans-serif; 
-}
+body{font-family: 'Noto Sans KR', sans-serif;}
 
 /* 01 */
 .notice{
   /* border: 1px solid red; */
   display: inline-block;
-  position: relative;
   margin-top: 100px;
+  position: relative;
 }
 .notice:before{
   content: attr(data-count);
@@ -28,36 +26,38 @@ body{
 }
 .fa-solid{font-size: 150px;}
 
+
 /* 02 */
-.cool-btn{
+.event-btn{
+  /* border: 1px solid green; */
   position: relative;
   display: block;
   width: 200px;
   height: 40px;
   color: #fff;
-  font-size: 15px;
   text-align: center;
   line-height: 40px;
   overflow: hidden;
+  margin-top: 100px;
 }
-.cool-btn:before,
-.cool-btn:after{
+.event-btn:before,
+.event-btn:after{
   position: absolute;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   transition: 0.35s;
 }
-.cool-btn:before{
+.event-btn:before{
   content: attr(data-link);
   background-color: crimson;
   top: 0;
   left: 0;
 }
-.cool-btn:after{
+.event-btn:after{
   content: attr(data-event);
   background-color: royalblue;
   top: 100%;
   left: 0;
 }
-.cool-btn:hover:before{top: -100%;}
-.cool-btn:hover:after{top: 0;}
+.event-btn:hover:before{top: -100%;}
+.event-btn:hover:after{top: 0;}

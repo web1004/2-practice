@@ -1,9 +1,8 @@
 @import url(reset.css);
 
 @keyframes mouse-wheele-ani{
-  0% {transform: translateY(0);}
-	50% {transform: translateY(-10px);}
-	100% {transform: translateY(0);}
+  0%,100% {transform: translate(-50%, 0);}
+	50% {transform: translate(-50%, -10px);}
 }
 
 .mouse-scroll{
@@ -12,18 +11,19 @@
   position: relative;
 }
 .mouse{
+  /* border: 1px solid red; */
   position: absolute;
-  bottom: 30px;
   left: 50%;
-	transform: translateX(-50%);
+  bottom: 30px;
+  transform: translateX(-50%);
 }
 .mouse .mouse-wheele{  /* 마우스모양 */
   border: 2px solid #fff;
   width: 32px;
 	height: 45px;
   border-radius: 30px;
-  position: relative;
   margin: auto;
+  position: relative;
 }
 .mouse .mouse-wheele:before{ /* 마우스휠 */
   content: '';

@@ -86,10 +86,9 @@ hr{margin: 50px 0;}
 .gnb2{
   width: 800px;
   margin: auto;
-  /* background-color: #fff; */
   border-radius: 10px;
-  padding: 50px 30px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
 }
 .gnb2 ul{
   display: flex;
@@ -98,9 +97,9 @@ hr{margin: 50px 0;}
 }
 .gnb2 ul li a{
   font-size: 20px;
-  text-transform: capitalize;
   font-weight: 500;
   color: #333;
+  text-transform: capitalize;
   position: relative;
 }
 .gnb2 ul li a:before{
@@ -118,13 +117,6 @@ hr{margin: 50px 0;}
 
 
 /* 03 */
-.gnb3{
-  width: 800px;
-  margin: auto;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
 .gnb3 a{
   /* border: 1px solid #000; */
   position: relative;
@@ -151,5 +143,6 @@ hr{margin: 50px 0;}
   left: 0;
   color: crimson;
 }
+
 .gnb3 a:hover:before{top: -100%;}
 .gnb3 a:hover:after{top: 0;}

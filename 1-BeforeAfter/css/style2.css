@@ -1,13 +1,12 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-
 /* 01 */
 .btn{
   display: inline-block;
   background-color: #000;
   color: #fff;
-  padding: 10px 20px;  /* 상하, 좌우 */
+  padding: 10px 20px; /* 상하, 좌우 */
   margin-top: 50px;
   position: relative; /* 부모설정 */
 }
@@ -19,10 +18,10 @@
   position: absolute; /* 가상클래스는 자식임 */
   bottom: 0;
   left: 0;
-  transition: 0.35s;
+  transition: 0.35s
 }
 .btn:hover:before{height: 100%;}
-.btn span{position: relative;}  /* 글자를 위에 올라오게 하기 위함 */
+.btn span{position: relative;} /* 글자를 위에 올라오게 하기 위함 */
 /*가상클래스(빨강박스)에 position: absolute;(둥둥 떠있는 상태)를 적용하면서 글자보다 위로 올라옴
 해결방법>>> z-index는 기본적으로 0이다.
 z-index가 없는 상태에서 relative가 absolute보다 우선 순위임*/
@@ -34,20 +33,19 @@ z-index가 없는 상태에서 relative가 absolute보다 우선 순위임*/
   text-align: center;
 }
 .section-header h3{
-  font-family: 'Noto Sans KR', sans-serif; 
+  font-family: 'Noto Sans KR', sans-serif;
   color: coral;
   font-weight: 500;
   font-size: 25px;
 }
 .section-header h1{font-weight: normal;} /* h태그의 기본굵기 해제 */
 .section-header h1 span{
-  /* border: 1px solid red; */
   position: relative;
+  /* border: 1px solid red; */
 }
 .section-header h1 span:before{
   content: '';
   position: absolute;
-  /*가상클래스는 inline요소이므로 가로세로크기가 적용되지 않아서 display속성을 사용해야하지만, position: absolute 속성을 적용하면 inline-block요소로 변경됨 */
   top: -35px;
   left: 50px;
   width: 50px;

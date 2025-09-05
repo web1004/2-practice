@@ -10,7 +10,7 @@ body{
 }
 
 .item{
-  /* border: 1px solid #000; */
+  /* border: 1px solid red; */
   width: 300px;
   margin-bottom: 10px;
   position: relative;
@@ -45,9 +45,9 @@ body{
   border: 1px solid dodgerblue;
   box-shadow: 0 0 5px dodgerblue;
 }
-.item input:focus +.fa-solid{  /* +(동위선택자 중 인접선택자) */
+.item input:focus  +.fa-solid{  /* +(동위선택자(+,~) 중 인접선택자) */
   background-color: dodgerblue;
   color: navy;
 }
-/* ::선택자 앞에 있는 콜론은 생략해서 1개만 쓸수 있지만  placeholder는 아직 적용이 되지않아서 2개 모두 사용해야 함*/
 .item input:focus::placeholder{opacity: 0;}
+/* ::선택자 앞에 있는 콜론은 생략해서 1개만 쓸수 있지만  placeholder는 아직 적용이 되지않아서 2개 모두 사용해야 함*/

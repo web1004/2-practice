@@ -20,7 +20,7 @@ body{
   text-align: center;
   margin-bottom: 100px;
   text-decoration-line: underline;
-	text-decoration-style: wavy;
+  text-decoration-style: wavy;
 	text-underline-offset: 15px;
 	text-decoration-color: cornflowerblue;
 	text-decoration-thickness: 4px;
@@ -39,10 +39,6 @@ body{
   position: relative;
   transition: 0.35s;
 }
-.card-item:hover{
-  transform: translateY(-15px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
 .card-item img{
   width: 100%;
   height: 100%;
@@ -50,40 +46,36 @@ body{
 }
 .card-item .caption{
   position: absolute;
-  bottom: -100px;
+  bottom: -110px;
   left: 0;
   width: 100%;
   height: 100%;
   text-align: center;
   color: #fff;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
+  row-gap: 15px;
+  padding: 0 10px;
   transition: 0.35s;
 }
-.card-item:hover .caption{bottom: 0;}
-
-.card-item:nth-child(1) .caption{background: linear-gradient(to top, DeepSkyBlue, transparent);}
+.card-item:nth-child(1) .caption{background: linear-gradient(to top, DeepSkyBlue, transparent)}
 .card-item:nth-child(2) .caption{background: linear-gradient(to top, CadetBlue, transparent);}
 .card-item:nth-child(3) .caption{background: linear-gradient(to top, MediumSlateBlue, transparent);}
 .card-item:nth-child(4) .caption{background: linear-gradient(to top, yellowgreen, transparent);}
 
-.caption h2{
-  font-weight: normal;
-  font-weight: 600;
-}
+.caption h2{font-weight: 500;}
 .caption h2 span{
   display: block;
   font-size: 17px;
   color: gold;
 }
 .caption p{line-height: 18px;}
-.caption .sns{margin: 15px 0;}
 .caption .sns a{
   display: inline-block;
   width: 25px;
-	height: 25px;
+  height: 25px;
   line-height: 25px;
   border: 1px solid #fff;
   transition: 0.35s;
@@ -92,11 +84,20 @@ body{
   background-color: #fff;
   color: #000;
 }
+
 .caption .btn-profile{
   background-color: #ee5253;
 	padding: 7px;
 	border-radius: 7px;
   opacity: 0.8;
   transition: 0.35s;
+  margin-bottom: 30px;
 }
 .caption .btn-profile:hover{opacity: 1;}
+
+/* Hover Effect */
+.card-item:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.card-item:hover .caption{bottom: 0;}

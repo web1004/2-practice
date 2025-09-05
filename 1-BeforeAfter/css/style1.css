@@ -1,7 +1,7 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
-@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css'); 
+
 
 body{margin: 30px;}
 
@@ -21,7 +21,7 @@ body{margin: 30px;}
   padding: 0 5px;
 }
 
-/* 02-가상클래스는 기본적으로 inline 이다.*/
+/* 02 */
 .coffee li:before{
   content: '\2615';
   font-size: 20px;
@@ -29,42 +29,43 @@ body{margin: 30px;}
 }
 .coffee li.soldout:after,
 .coffee li.hit:after{
-  margin-left: 5px;
+  margin-left: 10px;
   font-size: 12px;
   text-transform: uppercase;
+  font-weight: bold;
   /* vertical-align: top; */
-  transform: translateY(-10px);
-  display: inline-block;  /*transform:속성은 inline에는 적용되지않은  */
+  transform: translateY(-5px);
+  display: inline-block; /*transform:속성은 inline에는 적용되지않음  */
 }
 .coffee li.soldout:after{
   content: 'soldout';
   color: royalblue;
 }
+
 .coffee li.hit:after{
   content: 'hit';
   color: red;
-  font-weight: bold;
 }
 
 /* 03 */
 .icon p:nth-of-type(1):before{
-  content: '\e988';  
+  content: '\e8b8';
   font-family: 'Material Symbols Outlined';
   font-size: 36px;
-  color: aqua;
+  color: red;
 }
 .material-symbols-outlined{
-  font-size: 36px;
+  font-size: 45px;
   color: aqua;
 }
 
 .icon p:nth-of-type(2):before{
-  content: '\f072';
+  content: '\f689';
   font-family: fontawesome;
-  font-size: 45px;
-  color: purple;
+  font-size: 60px;
+  color: blue;
 }
 .fa-solid{
-  font-size: 45px;
+  font-size: 60px;
   color: purple;
 }

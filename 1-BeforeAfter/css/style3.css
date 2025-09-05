@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
-  height: 100vh;
   /* background-image: url(../image/dark.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -13,6 +12,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   position: relative;
 }
 body:before{
@@ -29,5 +29,5 @@ body:before{
   font-family: "Raleway", sans-serif;
   color: #fff;
   font-size: 72px;
-  /* position: relative; */
+  /* position: relative; (1)*/
 }

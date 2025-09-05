@@ -1,6 +1,7 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+*{box-sizing: border-box;}
 body{
   font-family: "Raleway", sans-serif;
   line-height: 26px;
@@ -12,10 +13,10 @@ body{
 }
 .gallery li{
   flex: 1;
-  position: relative;
   height: 100%;
-  transition: 0.5s;
+  position: relative;
   overflow: hidden;
+  transition: 0.5s;
 }
 .gallery li:before{
   content: attr(data-text);
@@ -29,6 +30,7 @@ body{
   padding: 5px 10px;
   transition: 0.5s;
 }
+
 .gallery li img{
   width: 100%;
   height: 100%;
@@ -41,12 +43,12 @@ body{
   left: 0;
   z-index: 1;
   width: 100%;
-  height: 250px;
+  height: 300px;
   background-color: #709c17;
   font-size: 15px;
   color: #fff;
-  padding: 30px;
   text-align: center;
+  padding: 30px;
   transition: 0.5s;
 }
 .gallery li .content:before{  /* 삼각형 */
@@ -57,7 +59,7 @@ body{
   width: 25px;
   height: 25px;
   background-color: #709c17;
-  transform: rotate(45deg) translateX(-50%)
+  transform: rotate(45deg) translateX(-50%);
 }
 .gallery li .content h2{
   text-transform: capitalize;
@@ -85,7 +87,7 @@ body{
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.7);
   display: flex;
   justify-content: center;
   align-items: center;

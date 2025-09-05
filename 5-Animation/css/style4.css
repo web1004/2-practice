@@ -5,7 +5,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 /* (1) */
@@ -24,9 +24,7 @@ body{
   color: #9D9993;
   overflow: hidden;
 }
-.title-text .title-wrap{
-  animation: title-ani 10s linear infinite;
-}
+.title-text .title-wrap{animation: title-ani 10s linear infinite;}
 .title-text:hover .title-wrap{
   animation-play-state: paused;
   color: #000;
@@ -36,6 +34,7 @@ body{
 animation-play-state: paused;
 animation-play-state: running;
 */
+
 
 /* (2) */
 @keyframes row1-ani{  /* 왼쪽으로 흘러감 */
@@ -77,9 +76,7 @@ animation-play-state: running;
   cursor: pointer;
 }
 
-.banner-slide .row2{  /* 구분선 */
-  border-top: 1px solid #ccc;
-}
+.banner-slide .row2{border-top: 1px solid #ccc;} /* 구분선 */
 .banner-slide .row:before,
 .banner-slide .row:after{
   content: '';
@@ -87,15 +84,9 @@ animation-play-state: running;
   top: 0;
   display: block;
   width: 200px;
-  height: 100px;
+  height: 200px;
   z-index: 2;
-  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .banner-slide .row:before{left: 0;}
-.banner-slide .row:after{
-  right: 0;
-  transform: rotateY(180deg);
-}
-
-
-/* (3)-자바스크립를 이용한 방법 */
+.banner-slide .row:after{right: 0;transform: rotateY(180deg);}

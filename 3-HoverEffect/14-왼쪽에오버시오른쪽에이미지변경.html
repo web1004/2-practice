@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>13-버튼오버시아이콘위치위로글자나오는효과</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .gallery{
+      border: 5px solid #000;
+      width: 1200px;
+      height: 500px;
+      margin: auto;
+    }
+    h2{text-align: center;}
+    .gallery-inner{
+      border: 3px solid red;
+      width: inherit;
+      height: 400px;
+      position: relative;
+      background: url(../image/first-image.jpg) no-repeat 500px top;
+    }
+    .gallery-list .num{
+      font-size: 40px;
+      font-weight: bold;
+      color: #ddd;
+    }
+    .gallery-list .num:hover{color: #333;}
+    .right-content{
+      position: absolute;
+      top: 0;
+      left: 500px;
+      background-color: greenyellow;
+      width: 500px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.5s;
+    }
+    .right-content p{
+      font-size: 46px;
+    }
+    .gallery-list:hover .right-content{opacity: 1;}
+  </style>
+</head>
+<body>
+
+  <div class="gallery">
+    <h2>gallery title</h2>
+    <div class="gallery-inner">
+      <div class="gallery-list">
+        <div class="num">01</div>
+        <div class="right-content">
+          <p>내용1</p>
+        </div>
+      </div>
+      <div class="gallery-list">
+        <div class="num">02</div>
+        <div class="right-content">
+          <p>내용2</p>
+        </div>
+      </div>
+      <div class="gallery-list">
+        <div class="num">03</div>
+        <div class="right-content">
+          <p>내용3</p>
+        </div>
+      </div>
+      <div class="gallery-list">
+        <div class="num">04</div>
+        <div class="right-content">
+          <p>내용4</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</body>
+</html>

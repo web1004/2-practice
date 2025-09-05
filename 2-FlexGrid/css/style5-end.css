@@ -3,26 +3,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{box-sizing: border-box;}
 
+/* 공통 */
+*{box-sizing: border-box;}
 body {
   color: #333;
   display: flex;
   justify-content: center;
 }
 .container {
-  width: 800px;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   row-gap: 60px;
   padding: 60px 0;
 }
-
-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+hr.divider {border-top: 1px solid #999;}  /* 중간가로선 */
+h2{
+  font-family: "Anton", sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  margin-bottom: 60px;
 }
+
+
+/* Header 영역_____________________________ */
+header {display: flex;}
 .greeting {
+  flex: 2;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -40,30 +48,30 @@ header {
   font-size: 28px;
   color: darkgrey;
 }
+.photo{flex: 1;}
 .photo img {
   width: 100%;
   height: auto;
 }
 
-h2{
-  font-family: "Anton", sans-serif;
-  font-weight: 300;
-  font-size: 32px;
-}
+
+/* Intro 영역_____________________________ */
 .intro {
   color: #555;
   font-size: 22px;
   font-weight: 500;
 }
 
-hr.divider {border-top: 1px solid #e5e5e5;}  /* 중간가로선 */
 
-.skills {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Skill 영역_____________________________ */
+.skills {}
+.skills .skill-list {
+  display: flex;
   column-gap: 30px;
 }
-.skill {
+.skills .skill-list .skill{
+  flex: 1;
+  height: 200px;
   border: 1px solid #e5e5e5;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
@@ -73,31 +81,42 @@ hr.divider {border-top: 1px solid #e5e5e5;}  /* 중간가로선 */
   row-gap: 10px;
 }
 
-.career {
+
+/* Career 영역_____________________________ */
+.career-list {
   display: flex;
-  column-gap: 15px;
-  border-bottom: 1px dotted #ccc;
-  padding: 15px 0;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 0 20px;
 }
-.career .year {
-  font-weight: bold;
+.career-list li{
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 10px;
+}
+.career-list li strong {
   font-style: italic;
   font-size: 20px;
+  margin-right: 50px;
 }
 
+
+/* Project 영역_____________________________ */
+.projects{padding: 30px;}
 .project {
   border: 1px solid #e5e5e5;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 30px;
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  grid-template-rows: 35px 100px;
   margin-bottom: 30px;
 }
 .project .title {
   font-weight: bold;
   color: crimson;
+  margin-bottom: 20px;
 }
-.project .program{color: #999;}
-.project .detail {grid-column: span 2;}
+.project .title .program{
+  color: #999;
+  font-weight: normal;
+  font-size: 14px;
+  margin-left: 20px;
+}
