@@ -1,9 +1,9 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
-
 
 body{margin: 30px;}
+
+/* 가상클래스 :before(맨앞), :after(맨뒤) 는 기본적으로 무조건 자식이며, inline 형식임*/
 
 /* 01 */
 .headline:before{
@@ -17,9 +17,10 @@ body{margin: 30px;}
   color: #fff;
   font-size: 20px;
   border-radius: 5px;
+  padding: 0 5px;  /* 상하,좌우 */
   margin-left: 20px;
-  padding: 0 5px;
 }
+
 
 /* 02 */
 .coffee li:before{
@@ -27,6 +28,10 @@ body{margin: 30px;}
   font-size: 20px;
   margin-right: 5px;
 }
+/* 
+.coffee li .soldout(후손선택자) -> .coffee클래스 아래 li아래 .soldout클래스 위치
+.coffee li.soldout(같은 서열) -> .coffee클래스 아래 .soldout클래스가 붙은 li
+*/
 .coffee li.soldout:after,
 .coffee li.hit:after{
   margin-left: 10px;
@@ -34,38 +39,39 @@ body{margin: 30px;}
   text-transform: uppercase;
   font-weight: bold;
   /* vertical-align: top; */
-  transform: translateY(-5px);
-  display: inline-block; /*transform:속성은 inline에는 적용되지않음  */
+  transform: translateY(-6px);
+  display: inline-block;  /* transform,animation속성은 inline에 적용되지않음 */
 }
 .coffee li.soldout:after{
   content: 'soldout';
   color: royalblue;
 }
-
 .coffee li.hit:after{
   content: 'hit';
   color: red;
 }
 
-/* 03 */
+
+/* 03 Icon Font*/
+/* (2)css를 이용해서 가상클래스로 삽입하는 방법 */
 .icon p:nth-of-type(1):before{
-  content: '\e8b8';
+  content: '\ea25';
   font-family: 'Material Symbols Outlined';
   font-size: 36px;
-  color: red;
+  color: green;
 }
-.material-symbols-outlined{
-  font-size: 45px;
-  color: aqua;
+.icon span{
+  font-size: 48px;
+  color: red;
 }
 
 .icon p:nth-of-type(2):before{
-  content: '\f689';
+  content: '\f179';
   font-family: fontawesome;
-  font-size: 60px;
+  font-size: 36px;
   color: blue;
 }
-.fa-solid{
-  font-size: 60px;
+.icon i{
+  font-size: 48px;
   color: purple;
 }

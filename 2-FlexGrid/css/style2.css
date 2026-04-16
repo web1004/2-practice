@@ -14,21 +14,21 @@ section{
   display: flex;
 }
 .post{display: flex;}
-.post:nth-child(odd) {flex-direction: column;} /* 홀수(2n+1) */
-.post:nth-child(even) {flex-direction: column-reverse;} /* 짝수(2n) */
+.post:nth-child(odd) {flex-direction: column;} /* 홀수(2n+1) - 방향이 위에서 아래로 */
+.post:nth-child(even) {flex-direction: column-reverse;} /* 짝수(2n) - 방향이 아래에서 위로 */
 
-.image{
+.post .image{
   width: 300px;
   height: 300px;
-  overflow: hidden;
+  overflow: hidden;  /* 이미지에 마우스 호버시 벗어나는 자식을 숨김 */
 }
-.image img{
+.post .image img{
   width: inherit;
   height: inherit;
-  object-fit: cover;
+  object-fit: cover;  /* 이 속성을 사용하려면 부모의 가로,세로크기를 상속받아야 함 */
   transition: 0.3s;
 }
-.image img:hover{transform: scale(1.2);}
+.post .image img:hover{transform: scale(1.2);}
 
 .desc{
   background-color: royalblue;
@@ -36,7 +36,7 @@ section{
   text-align: center;
   height: 300px;
   display: flex; /* 메인축의 기본방향은 가로 */
-  flex-direction: column; /* 메인축이 세로방향으로 변경 */
+  flex-direction: column;  /* 메인축을 세로방향으로 변경 */
   justify-content: center; /* 메인축이 세로로 변경되어서 수직정렬이 됨 */
   align-items: center; /* 메인축이 세로로 변경되어서 수평정렬이 됨 */
 }
@@ -45,7 +45,7 @@ section{
 -메인축의 방향 column(세로)일때는 메인축의 방향이 바뀌므로 justify-content가 수직정렬이고, align-items가 수평정렬이다. 
 */
 
-.desc h2 {
+.desc h2{
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;

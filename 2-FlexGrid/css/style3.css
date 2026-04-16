@@ -21,7 +21,7 @@ main{
 }
 .photo{
   flex: 1;
-  height: inherit;
+  height: inherit;  /* 부모값 상속(400px) */
 }
 .photo img{
   width: 100%;
@@ -31,7 +31,7 @@ main{
 
 .promotion{
   flex: 1;
-  position: relative;
+  position: relative; /* 부모설정 */
   background-color: #46515c;
   display: flex;
   justify-content: center;
@@ -39,21 +39,20 @@ main{
 }
 .banner-logo{
   position: absolute;
-  top: 50%; /* 요소의 중심이 가운데가 아니기 때문에 수직으로 정가운데 오지 않음 */
+  top: 50%;
   left: -100px;
-  transform: translateY(-50%); /* 50% 만틈 반대로 올라감 */
+  transform: translateY(-50%);
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   padding: 10px;
 }
-
 .heading{
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  color: #fff;
+  align-items: flex-start;  /* 메인축이 세로 변경되어서 수평정렬을 왼쪽(left와동일) */
   row-gap: 15px;
 }
 .heading h2{

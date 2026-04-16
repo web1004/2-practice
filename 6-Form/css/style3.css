@@ -104,3 +104,13 @@ body{
 }
 .login div input[name=agree]:checked + em{background-position: right}
 .login div input[name=agree]:checked + em + span{color: #f94261;}
+
+
+
+/* 크롬 자동완성 배경/글자색 덮어쓰기 */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  -webkit-text-fill-color: #000;
+}

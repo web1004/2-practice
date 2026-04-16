@@ -9,10 +9,10 @@ body{
   background-size: cover; */
 
   background: url(../image/dark.jpg) no-repeat center/cover fixed;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   position: relative;
 }
 body:before{
@@ -24,10 +24,11 @@ body:before{
   height: 100%;
   background: linear-gradient(to right bottom, crimson, transparent);
   z-index: -1; /* z-index의 기본값은 0으로 -1은 0보다 더 아래쪽에 위치함 */
+  /* 주의:잘못하면 콘텐츠까지 한꺼번에 밑으로 내려갈수 있음 */
 }
 .image-frame h1{
   font-family: "Raleway", sans-serif;
   color: #fff;
   font-size: 72px;
-  /* position: relative; (1)*/
+  /* position: relative; (1)relative의 우선순위를 이용한 방법*/
 }

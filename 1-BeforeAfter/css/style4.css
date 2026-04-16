@@ -35,10 +35,10 @@ body{font-family: 'Noto Sans KR', sans-serif;}
   width: 200px;
   height: 40px;
   color: #fff;
+  margin-top: 100px;
   text-align: center;
   line-height: 40px;
-  overflow: hidden;
-  margin-top: 100px;
+  overflow: hidden;  /* 넘친 자식 숨기기 */
 }
 .event-btn:before,
 .event-btn:after{

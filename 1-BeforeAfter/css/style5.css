@@ -12,7 +12,6 @@ body{
 }
 
 .heading{
-  /* border: 1px solid red; */
   width: 850px;
   text-align: center;
   font-size: 38px;
@@ -21,9 +20,9 @@ body{
 .heading:before,
 .heading:after{
   position: absolute;
-  top: -35px;
-  color: #ddd;
   font-size: 110px;
+  color: #ddd;
+  top: -32px;
 }
 .heading:before{
   content: '{';
@@ -43,23 +42,24 @@ body{
   content: '\f004';
   font-family: fontawesome;
   color: crimson;
-  margin-right: 10px;
-  display: inline-block;  /* 애니메이션에서 작성한 transform,animation속성은 inline에서는 적용되지 않음 */
-  /* (1)animation: heart-ani 0.7s linear infinite;  */
-  animation: heart-ani 0.7s linear infinite alternate; /* (2) */
+  margin-right: 5px;
+  display: inline-block; /* 애니메이션에서 작성한 transform속성은 inline에서는 적용되지 않음 */
+  animation: heart-ani 0.7s linear infinite; 
+}
+.heading em{
+  font-style: normal;  /* 이탤릭체 해지 */
+  color: crimson; 
 }
 
 /* Heart Animation */
-/* (1)
 @keyframes heart-ani{
-  0%{transform: scale(0.7);}
-  50%{transform: scale(1.2);}
-  100%{transform: scale(0.7);}
-} 
-*/
-
-/* (2) */
-@keyframes heart-ani{
-  0%{transform: scale(1);}
-  100%{transform: scale(1.5);}
+  0%{
+    transform: scale(0.7);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(0.7);
+  }
 }

@@ -11,31 +11,30 @@ body{font-family: "Nanum Myeongjo", serif;}
 header{
   /* border: 1px solid #000; */
   height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* 메인축이 가로방향일때 수직정렬이고, 높이가 있어야 적용됨 */
+  display: flex;  /* 메인축의 기본은 가로방향 */
+  justify-content: space-between;  /* 메인축이 가로방향일때 수평정렬 */
+  align-items: center;  /* 메인축이 가로방향일때 수직정렬 ,높이가 있어야 함*/
 }
-
 header nav ul{
   display: flex;
-  column-gap: 15px;
-  color: #444;
+  column-gap: 15px;  /* (2)사이 간견띄우기-양끝을 제외하고 가운데 간격만을 띄움 */
+  color: #666;
 }
-
 /* a태그의 글자들은 반드시 a태그에 글자색을 적용해야 함
 header nav ul li a{color:#444;}
-하지만 color:inherit; 속성을 적용하면 부모에 넣어도 글자색이 변경가능  
+하지만 color:inherit; 속성을 적용하면 부모에 넣어도 글자색을 부모로부터 상복받을수 있어서 변경가능  
 */
 
-/* header nav ul li{margin: 0 20px;} 
-header nav ul li:last-child{marign-right:0;}
+/* (1)사이 간견띄우기-margin을 이용한 방법
+header nav ul li{margin: 0 10px;}
+header nav ul li:last-child{margin-right: 0;} 
 ->사이 간격뿐만 아니라 맨 앞이나 맨 끝에도 간격이 생김
 */
 
 main{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;  /* column-gap + row-gap */
 }
 main img{
   width: 100%;
@@ -56,6 +55,6 @@ main article:first-child{
   font-weight: bold;
 }
 main article:nth-child(2){
-  grid-area: span 2/span 2; /* 행/열 */
+  grid-area: span 2/span 2;  /* 행/열 */
   font-size: 28px;
 }
