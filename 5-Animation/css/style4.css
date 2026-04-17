@@ -1,92 +1,48 @@
 @import url(reset.css);
 
-body{
+@keyframes mouse-wheele-ani{
+  0%,100% {transform: translate(-50%, 0);}
+	50% {transform: translate(-50%, -10px);}
+}
+
+.mouse-scroll{
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* (1) */
-@keyframes title-ani{
-  0%{transform: translateX(0);}
-  100%{transform: translateX(-100%);}
-}
-
-.title-text{
-  border: 5px solid #000;
-  width: 1200px;
-  display: flex;
-  white-space: nowrap;  /* 텍스트가 가로로 나열되면서 밑으로 떨어지는것을 막기 위함 */
-  font-size: 32px;
-  font-weight: bold;
-  color: #9D9993;
-  overflow: hidden;
-}
-.title-text .title-wrap{animation: title-ani 10s linear infinite;}
-.title-text:hover .title-wrap{
-  animation-play-state: paused;
-  color: #000;
-  cursor: pointer;
-}
-/* 
-animation-play-state: paused;
-animation-play-state: running;
-*/
-
-
-/* (2) */
-@keyframes row1-ani{  /* 왼쪽으로 흘러감 */
-  0%{transform: translateX(0);}
-  100%{transform: translateX(-50%);}
-}
-@keyframes row2-ani{  /* 오른쪽으로 흘러감 */
-  0%{transform: translateX(0);}
-  100%{transform: translateX(50%);}
-}
-
-.banner-slide{
-  border: 5px solid #000;
-  width: 1200px;
-  margin: 100px auto;
-  overflow: hidden;
-}
-.banner-slide .row{
+  background-color: #333; 
   position: relative;
-  width: inherit;
-  height: 90px;
 }
-.banner-slide .row .row-inner{
-  display: flex;
+.mouse{
+  /* border: 1px solid red; */
   position: absolute;
-  height: 100%;
-  top: 0;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
 }
-.banner-slide .row1 .row-inner{
-  left: 0;
-  animation: row1-ani 20s linear infinite alternate;
+.mouse .mouse-wheele{  /* 마우스모양 */
+  border: 2px solid #fff;
+  width: 32px;
+	height: 45px;
+  border-radius: 30px;
+  margin: auto;
+  position: relative;
 }
-.banner-slide .row2 .row-inner{
-  right: 0;
-  animation: row2-ani 20s linear infinite alternate;
-}
-.banner-slide:hover .row-inner {
-  animation-play-state: paused;
-  cursor: pointer;
-}
-
-.banner-slide .row2{border-top: 1px solid #ccc;} /* 구분선 */
-.banner-slide .row:before,
-.banner-slide .row:after{
+.mouse .mouse-wheele:before{ /* 마우스휠 */
   content: '';
   position: absolute;
-  top: 0;
-  display: block;
-  width: 200px;
-  height: 200px;
-  z-index: 2;
-  background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 4px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  animation: mouse-wheele-ani 1.2s linear infinite;
 }
-.banner-slide .row:before{left: 0;}
-.banner-slide .row:after{right: 0;transform: rotateY(180deg);}
+.mouse span{
+  color: #fff;
+	font-size: 12px;
+}
+
+.container{
+  height: 800px;
+  background-color: aquamarine;
+}

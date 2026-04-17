@@ -1,6 +1,10 @@
 @import url(reset.css);
-
-
+@font-face {
+  font-family: 'MitmiFont';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
 
 body{background-color: #b7e6f6;}
 
@@ -38,7 +42,8 @@ nav{
   transition: 0.5s;
 }
 .gnb li a{
-  font-family: 'KIMM_Bold';
+  font-family: 'MitmiFont';
+  font-size: 22px;
   color: #fff;
   background: rgba(0, 0, 0, 0);
   padding: 5px 12px;
@@ -56,3 +61,5 @@ nav{
 
 /* 03-캐릭터는 아래에서 위로 올라옴*/
 .gnb li:hover:before{top: 30px;}
+
+

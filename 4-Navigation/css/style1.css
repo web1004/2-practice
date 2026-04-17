@@ -81,7 +81,6 @@ hr{margin: 50px 0;}
 }
 .btn5:hover:before{width: 0;}
 
-
 /* 02 */
 .gnb2{
   width: 800px;
@@ -96,25 +95,24 @@ hr{margin: 50px 0;}
   column-gap: 40px;
 }
 .gnb2 ul li a{
+  position: relative;
   font-size: 20px;
   font-weight: 500;
   color: #333;
   text-transform: capitalize;
-  position: relative;
 }
 .gnb2 ul li a:before{
   content: '';
   position: absolute;
-  bottom: 5px;
+  bottom : 5px;
   left: 0;
   width: 0;
-  height: 6px;
+  height: 10px;
   background-color: deepskyblue;
   z-index: -1;
   transition: 0.5s;
 }
 .gnb2 ul li:hover a:before{width: 100%;}
-
 
 /* 03 */
 .gnb3 a{
@@ -125,13 +123,13 @@ hr{margin: 50px 0;}
   height: 30px;
   text-align: center;
   font-weight: 400;
-  overflow: hidden;
+  overflow: hidden;  /* 넘치는 자식 숨기기 */
 }
 .gnb3 a:before,
 .gnb3 a:after{
   content: attr(data-link);
   position: absolute;
-  width: 100%;
+  width: 100%;  /* 가상클래스는 inline이고  "position: absolute;"를 적용해서 iknline-block으로 변경됨 -> 가로100%가 아니므로 width값을 넣어줌*/
   transition: 0.35s;
 }
 .gnb3 a:before{

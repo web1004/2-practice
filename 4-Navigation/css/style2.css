@@ -1,6 +1,6 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 
 body{
   font-family: "Raleway", sans-serif;
@@ -9,7 +9,7 @@ body{
   background-color: royalblue;
 }
 
-/* 브라우저의 정가운데(수식/수평 도무 가운데) 정렬하는 방법
+/* 브라우저의 정가운데(수식/수평 모두 가운데) 정렬하는 방법
 (1)flex를 이용한 방법
 nav{
   height: 100vh;  ->vh(viewport height)
@@ -27,7 +27,6 @@ nav{
 }
 */
 
-
 nav{
   position: absolute;
   top: 50%;
@@ -38,8 +37,8 @@ nav{
   display: block;
   font-size: 40px;
   color: #fff;
-  text-transform: capitalize;
   margin: 30px 0;
+  text-transform: capitalize;
 }
 .gnb li a:before{
   content: '\f105';
