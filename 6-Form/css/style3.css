@@ -63,8 +63,8 @@ body{
   text-indent: 30px;
 }
 .login div input[type=text]{background-image: url(../image/icon-user.svg);}
-.login div input[type=password]{background-image: url(../image/icon-password.svg);}
-.login div input[type=email]{background-image: url(../image/icon-email.svg);}
+.login div input[type=email]{background-image: url(../image/icon-password.svg);}
+.login div input[type=password]{background-image: url(../image/icon-email.svg);}
 
 /* Form Focus CSS(커서가 나올때 테두리에 색상주기  */
 .login div :is(input[type=text],input[type=email],input[type=password],select,textarea):focus{
@@ -80,8 +80,8 @@ body{
 }
 
 /* Custom Checkbox & Radio */
-.login div input[name=event] {display: none;}  /* 기존의 체크박스는 안보이게 함 */
-.login div input[name=event]+em{  /* + 인접선택자 */
+.login div input[name=event]{display: none;} /* 기존의 체크박스는 안보이게 함 */
+.login div input[name=event] + em{  /* + 동위선택자 중 인접선택자 */
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -90,10 +90,10 @@ body{
   margin-right: 5px;
   transform: translateY(3px);
 }
-.login div input[name=event]:checked + em{background-position: right}
+.login div input[name=event]:checked + em{background-position: right;}
 
-.login div input[name=agree] {display: none;}  
-.login div input[name=agree]+em{  
+.login div input[name=agree]{display: none;}
+.login div input[name=agree] + em{  
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -102,15 +102,5 @@ body{
   margin-right: 5px;
   transform: translateY(3px);
 }
-.login div input[name=agree]:checked + em{background-position: right}
+.login div input[name=agree]:checked + em{background-position: right;}
 .login div input[name=agree]:checked + em + span{color: #f94261;}
-
-
-
-/* 크롬 자동완성 배경/글자색 덮어쓰기 */
-input:-webkit-autofill,
-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-  box-shadow: 0 0 0px 1000px #fff inset;
-  -webkit-text-fill-color: #000;
-}

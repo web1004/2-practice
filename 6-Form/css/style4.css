@@ -15,7 +15,7 @@ input, button{
   outline: none;
 }
 .login-form{width: 300px;}
-.login-form h2 {
+.login-form h2{
   color: #fff;
   font-size: 25px;
   font-weight: normal;
@@ -30,13 +30,13 @@ input, button{
 }
 .item input{
   display: block;
-  width: 100%;
   border: 2px solid #ced6e0;
-  box-sizing: border-box;
   padding: 10px;
+  width: 100%;
   border-radius: 5px;
   color: #fff;
   background-color: transparent;
+  box-sizing: border-box;
 }
 .item input + .item-text{
   position: absolute;
@@ -45,7 +45,7 @@ input, button{
   color: #fff;
   padding: 0 10px;
   background-color: #2f3542; /* 글자가 올라갈때 배경색을 동일한 색상으로 채워서 선이 안보이게 함 */
-  pointer-events: none; /* 마우스이벤트를 받지 않아야 함-기본이 all */
+  pointer-events: none;  /* 마우스이벤트를 받지 않아야 함-기본이 all ->글자에 적용된 이벤트 삭제해서 포커스가 적용되게 함 */
   transition: 0.25s;
 }
 .btn-login{
@@ -53,19 +53,17 @@ input, button{
   width: 100%;
   padding: 10px;
 	border-radius: 5px;
-	cursor: pointer;
   background-color: #1e90ff;
 	color: #fff;
   text-transform: capitalize;
-	opacity: 0.7;
+  opacity: 0.7;
+  cursor: pointer;
   transition: 0.35s;
 }
-.btn-login:hover {opacity: 1;}
+.btn-login:hover{opacity: 1;}
 
 .item input:focus + .item-text{
   color: #1e90ff;
   transform: translateY(-20px) scale(0.98);
 }
-/* 문제 : 글자위가 아닌 오른쪽 빈 여백을 클릭해야 적용되고 있음 */
-
-
+/* 문제 : 글자위가 아닌 오른쪽 빈 여백을 클릭을 해야 적용되고 있음 */
