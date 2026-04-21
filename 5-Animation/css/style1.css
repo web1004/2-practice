@@ -22,13 +22,10 @@ body{
   display: inline-block;
   width: 15px;
   height: 15px;
-  background-color: gray;
   border-radius: 50%;
   animation: circle-ani 1s linear infinite;
 }
-.circle span:nth-child(1){
-  background-color: crimson;
-}
+.circle span:nth-child(1){background-color: crimson;}
 .circle span:nth-child(2){
   background-color: limegreen;
   animation-delay: 0.2s;

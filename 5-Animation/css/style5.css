@@ -9,39 +9,13 @@ body{
 }
 
 @keyframes flow-left{
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translateX(0);}
+  100% { transform: translateX(-50%);}
 }
 
 @keyframes flow-right{
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-/* (1)텍스트 */
-.flow-text{
-  width: 1200px;
-  overflow: hidden;
-  border: 5px solid #000;
-}
-
-.flow-text .track{
-  display: flex;
-  width: max-content;
-  animation: flow-left 30s linear infinite;
-}
-
-.flow-text span{
-  font-size: 32px;
-  font-weight: bold;
-  color: #9D9993;
-  padding-right: 60px;
-  white-space: nowrap;
-}
-
-.flow-text:hover .track{
-  animation-play-state: paused;
-  color: #000;
+  0% { transform: translateX(-50%);}
+  100% { transform: translateX(0);}
 }
 /* 
 animation-play-state: paused;
@@ -49,60 +23,70 @@ animation-play-state: running;
 */
 
 
+/* (1)텍스트 */
+.flow-text{
+  width: 1200px;
+  border: 5px solid #000;
+  overflow: hidden;
+}
+.flow-text .track{
+  display: flex;
+  width: max-content;
+  animation: flow-left 30s linear infinite;
+}
+.flow-text .track span{
+  font-size: 32px;
+  font-weight: bold;
+  color: #9D9993;
+  padding-right: 60px;
+  white-space: nowrap;
+}
+.flow-text:hover .track{
+  animation-play-state: paused;
+  color: #000;
+}
+
+
 /* (2)이미지배너 */
 .banner{
   width: 1200px;
-  overflow: hidden;
   border: 5px solid #000;
+  overflow: hidden;
 }
-
 .row{
   height: 90px;
   overflow: hidden;
 }
-
-.track{
+.banner .row .track{
   display: flex;
   width: max-content;
 }
+.banner .row .track img{}
 
-.track img{
-  height: 100%;
-  flex-shrink: 0;
-}
+/* 왼쪽으로 이동 */
+.banner .track.left{animation: flow-left 50s linear infinite;}
 
-/* 위: 왼쪽 이동 */
-.track.left{
-  animation: flow-left 50s linear infinite;
-}
+/* 오른쪽으로 이동 */
+.banner .track.right{animation: flow-right 50s linear infinite;}
 
-/* 아래: 오른쪽 이동 */
-.track.right{
-  animation: flow-right 50s linear infinite;
-}
-
-.banner:hover .track{
-  animation-play-state: paused;
-}
+.banner:hover .track{animation-play-state: paused;}
 
 .banner .row{
   position: relative;
   width: inherit;
   height: 90px;
 }
-
 .banner .row:before,
 .banner .row:after{
   content: '';
   position: absolute;
   top: 0;
+  z-index: 2;
   display: block;
   width: 200px;
   height: 200px;
-  z-index: 2;
+  /* background-color: red; */
   background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .banner .row:before{left: 0;}
 .banner .row:after{right: 0;transform: rotateY(180deg);}
-
-
