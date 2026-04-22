@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{box-sizing: border-box;}
-
 body{
   font-family: "Montserrat", sans-serif;
   height: 100vh;
@@ -14,14 +13,15 @@ body{
   font-size: 15px;
 }
 
+.container{width: 1400px;}
 .container h1{
   font-family: "Raleway", sans-serif;
   font-size: 36px;
   text-align: center;
   margin-bottom: 100px;
-  text-decoration-line: underline;
   text-decoration-style: wavy;
-	text-underline-offset: 15px;
+  text-decoration-line: underline;
+  text-underline-offset: 15px;
 	text-decoration-color: cornflowerblue;
 	text-decoration-thickness: 4px;
 }
@@ -31,9 +31,8 @@ body{
   gap: 20px;
 }
 .card-item{
-  /* border: 1px solid red; */
-  height: 400px;
   flex: 1;
+  height: 400px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -60,7 +59,7 @@ body{
   padding: 0 10px;
   transition: 0.35s;
 }
-.card-item:nth-child(1) .caption{background: linear-gradient(to top, DeepSkyBlue, transparent)}
+.card-item:nth-child(1) .caption{background: linear-gradient(to top, DeepSkyBlue, transparent);}
 .card-item:nth-child(2) .caption{background: linear-gradient(to top, CadetBlue, transparent);}
 .card-item:nth-child(3) .caption{background: linear-gradient(to top, MediumSlateBlue, transparent);}
 .card-item:nth-child(4) .caption{background: linear-gradient(to top, yellowgreen, transparent);}
@@ -89,9 +88,9 @@ body{
   background-color: #ee5253;
 	padding: 7px;
 	border-radius: 7px;
-  opacity: 0.8;
-  transition: 0.35s;
+  opacity: 0.7;
   margin-bottom: 30px;
+  transition: 0.35s;
 }
 .caption .btn-profile:hover{opacity: 1;}
 

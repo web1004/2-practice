@@ -5,10 +5,10 @@ body{
   font-family: "Raleway", sans-serif;
   color: #222;
   font-weight: 300;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .items{
@@ -21,7 +21,7 @@ body{
   height: 300px;
   border: 1px solid #ddd;
   margin: 10px;
-  position: relative; /* 부모설정 */
+  position: relative;  /* 부모설정 */
 }
 .caption{
   position: absolute;  /* 자식설정 */
@@ -32,12 +32,16 @@ body{
   background-color: rgba(0,0,0,0.8);
   color: #fff;
   padding: 20px 10px;
-  box-sizing: border-box;  /* padding,border를 포함 */
+  box-sizing: border-box; /* 가로크기 width에 padding,border를 포함 */
   /* padding(안쪽여백)을 사용하면 크기가 늘어남 -> 늘어나기 않게 하려면 부모크기에 padding을 포함하도록 함 */
   opacity: 0;
   transition: 0.5s;
 }
 .item:hover .caption{opacity: 1;}
+/* .items:hover .item .caption{opacity: 1;} 
+->3개의 목록을 감싸는 부모에 넣게 되면 전체 영역이 되기 때문에 3개가 동시에 호버효과가 나옴
+->hover선택자는 어디에도 넣을수 있지만, 어디에 넣느냐에 따라서 마우스 호버의 영역이 다름
+*/
 
 .caption p:nth-of-type(2){margin: 20px 0;}
 .caption a{

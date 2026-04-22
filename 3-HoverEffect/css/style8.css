@@ -1,33 +1,30 @@
 @import url(reset.css);
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
-  font-family: "Montserrat", sans-serif;
-  box-sizing: border-box;
-}
-
-body{ 
-  height: 100vh;
+*{box-sizing: border-box;}
+body{
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 h2{margin: 50px 0;}
 
 /* (1)border에 그레디언트효과 주기 */
-/* 
-아래 예시처럼 보더 색상은 단색 말고 그라디언트 색상을 가질 수 없음
+/*
+아래 예시처럼 보더 색상은 단색 말고 그라디언트 색상을 가질 수 없음 
 button{border: 1px solid linear-graient(to top, crimson, royalblue);} 
 */
+
 button{
+  position: relative;
   border: none;
   background-color: #333;
   color: #fff;
   padding: 15px 30px;
   border-radius: 100px;
   cursor: pointer;
-  position: relative;
 }
 button:after{
   content: '';
@@ -37,6 +34,7 @@ button:after{
   transform: translate(-50%,-50%);
   width: calc(100% + 10px);
   height: calc(100% + 10px);
+  /* background-color: red; */
   background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%); 
   border-radius: 100px;
   z-index: -1;
@@ -55,8 +53,8 @@ button:hover:after{transform: translate(-50%,-50%) rotateX(180deg);}
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  border-radius: 20px;
   margin: 20px;
+  border-radius: 20px;
   transition: 0.5s;
 }
 .frame .frame1:hover{
@@ -74,12 +72,13 @@ button:hover:after{transform: translate(-50%,-50%) rotateX(180deg);}
               -20px 20px 60px #ffffff;
 }
 
+
 /* (3)여러가지 오버효과 */
 .btn-frame a{
   position: relative;
   display: block;
   text-transform: uppercase;
-	margin: 50px 0;
+  margin: 50px 0;
   text-align: center;
   transition: 0.35s;
 }
@@ -96,14 +95,13 @@ button:hover:after{transform: translate(-50%,-50%) rotateX(180deg);}
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%); 
-  transition: 0.35s;
+  background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
+  z-index: -1;
 }
-.btn1:hover:before{transform: scale(3);}
 .btn1:hover{box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);}
+.btn1:hover:before{transform: scale(3);}
 
 .btn2{
   /* border: 1px solid #000; */
@@ -128,6 +126,7 @@ button:hover:after{transform: translate(-50%,-50%) rotateX(180deg);}
 	color: #fff;
 	padding: 10px 30px;
 	border-radius: 30px;
+  transition: 0.35s;
 }
 .btn3:hover{
   box-shadow: 5px 5px 0 gray, 10px 10px 0 lightgray;
