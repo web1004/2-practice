@@ -9,10 +9,11 @@ body{
   justify-content: flex-start;
   align-items: center;
   gap: 150px;
+  margin-top: 150px;
 }
 
 /* (1) */
-.frame1{perspective: 500px;} /* 원근감을 만드는 속성(0~1000)*/
+.frame1{perspective: 500px;}  /* 원근감을 만드는 속성(0~1000)*/
 .frame1 div{
   width: 400px;
   height: 300px;
@@ -47,7 +48,7 @@ body{
   border: 5px solid #000;
   display: flex;
   gap: 50px;
-  /* perspective: 500px */
+  /* perspective: 500px; */
 }
 .frame3 div{
   width: 200px;
@@ -66,13 +67,14 @@ body{
   perspective-origin: bottom left;
 }
 .frame4 div{
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   background-color: yellowgreen;
   transform: rotateX(45deg);
 }
 
-/* (5) */
+
+/* (*5) */
 .frame5{
   border: 5px solid #000;
   width: 200px;
@@ -82,16 +84,18 @@ body{
   perspective: 700px;
 }
 .frame5 .card{
+  position: relative;
   width: inherit;
   height: inherit;
-  position: relative;
   transform-style: preserve-3d;  /* 부모로부터 받아 자신의 자식요소에 전달 */
   transition: 0.5s;
 }
-.frame5:hover .card {transform: rotateY(180deg);}
+.frame5:hover .card{transform: rotateY(180deg);}
 
-.frame5 .card div {
+.frame5 .card div{
   position: absolute;
+  /* top: 0;
+  left: 0; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -105,7 +109,6 @@ body{
   backface-visibility: hidden;  /* 요소의 뒷면 숨기기 */
 }
 
-
 /* (6) */
 .card-frame{
   border: 5px solid #000;
@@ -113,18 +116,17 @@ body{
   height: 260px;
   perspective: 800px;
 }
-.card-items{
+.card-frame .card-items{
   position: relative;
   width: inherit;
   height: inherit;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d; 
   transition: 1s;
 }
 .card-frame:hover .card-items{transform: rotateX(180deg);}
-.card-item {position: absolute;}
-.card-item.back {
-  transform: rotateX(180deg);
-  backface-visibility: hidden; 
+
+.card-items .card-item{position: absolute;}
+.card-items .card-item.back{
+  transform: rotateY(180deg);  
+  backface-visibility: hidden;  
 }
-.card-items img{display: block;} 
-/* img태그는 inline-block요소로 기본적인 마진이 있어서 없앰 */

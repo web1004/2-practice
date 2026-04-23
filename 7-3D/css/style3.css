@@ -14,45 +14,46 @@ body{
   /* border: 1px solid #000; */
   width: 300px;
   aspect-ratio: 9/16;  /* 가로세로비율로 크기설정 */
-  perspective: 1000px;
+  perspective: 1000px;  /* (2)최상위부모에 원근감주기 */
 }
 .card{
+  position: relative;
   width: inherit;
   height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d;  /* (3)중간부모-자식에게 원근감 전달 */
   transition: 4s;
 }
-.card>div{
+.card>div{  /* .front와 .back 공통 */
   position: absolute;
   width: inherit;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform-style: preserve-3d; /* z축 튀어나오는걸 적용하기 위해 한번더 받아와야 함 */
+  transform-style: preserve-3d; /* (6)z축 튀어나오는걸 적용하기 위해 한번더 받아와야 함 */
 }
-.card>div h2 {
+.card>div h2{
   font-size: 42px;
   text-transform: uppercase;
-  transform: translateZ(25px);  /* z축: 앞으로 튀어나오게 함 */
+  transform: translateZ(25px); /* (5)z축: 앞으로 튀어나오게 함 */
 }
-.card>div .outline {
+.card>div .outline{
   position: absolute;
-	width: 85%;
-	height: 90%;
+  width: 85%;
+  height: 90%;
   border: 10px solid #000;
   transform: translateZ(25px);
 }
-.card .front {
-	background: url(../image/front.jpg) no-repeat;
-	background-size: cover;
+.card .front{
+  background: url(../image/front.jpg) no-repeat;
+  background-size: cover;
 }
 .card .back{
   background: url(../image/back.jpg) no-repeat;
-	background-size: cover;
+  background-size: cover;
+  /* (1)뒷면은 반전시키고 안보이게 함 */
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
 
-.card-inner:hover .card{transform: rotateY(180deg);}
+.card-inner:hover .card{transform: rotateY(180deg);} /* (4)호버효과주기 */
