@@ -87,6 +87,28 @@ animation-play-state: running;
   height: 200px;
   /* background-color: red; */
   background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  transition: 0.5s;
 }
 .banner .row:before{left: 0;}
 .banner .row:after{right: 0;transform: rotateY(180deg);}
+
+.banner:hover .row:before{background: linear-gradient(to right, red 0%, rgba(255, 255, 255, 0) 100%);}
+
+/* 
+
+.banner .row:before {
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.banner .row:after {
+  background: linear-gradient(to right, red, transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.banner:hover .row:after {
+  opacity: 1;
+}
+
+
+*/

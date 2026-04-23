@@ -11,7 +11,6 @@ body{
   justify-content: center;
   align-items: center;
   background: url(../image/snow-photo.jpg) no-repeat center/cover fixed;
-  /* background-size: cover; */
   position: relative;
 }
 body:before{
@@ -52,7 +51,6 @@ font-family: "Montserrat", "Noto Sans KR", sans-serif;
 font-size:15px;
 line-height:1.2; 또는 font-size와 같은 값 15px
 */
-
 
 .search input[type=search]{
   width: 350px;

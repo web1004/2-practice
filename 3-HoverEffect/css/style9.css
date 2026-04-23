@@ -1,23 +1,22 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-* {
-	font-family: "Montserrat", sans-serif;
-	box-sizing: border-box;
-}
+*{box-sizing: border-box;}
 body{
-  background-color: #eee;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
+  background-color: #eee; 
 }
 hr{margin: 100px 0;}
+
 .headline{
-  text-align: center;	
+  text-align: center;
   text-transform: capitalize;
   margin: 50px 0;
 }
 
-/* (1) */
-.portfolio1 .items {
+/* (1)배경이미지를 이용한 방법 */
+.portfolio1 .items{
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -32,13 +31,13 @@ hr{margin: 100px 0;}
   background-size: cover;
   transition: 1s;
 }
-.portfolio1 .items .item:nth-child(1) {background-image: url(../image/temp-01.png);}
-.portfolio1 .items .item:nth-child(2) {background-image: url(../image/temp-02.png);}
-.portfolio1 .items .item:nth-child(3) {background-image: url(../image/temp-03.png);}
+.portfolio1 .items .item:nth-child(1){background-image: url(../image/temp-01.png);}
+.portfolio1 .items .item:nth-child(2){background-image: url(../image/temp-02.png);}
+.portfolio1 .items .item:nth-child(3){background-image: url(../image/temp-03.png);}
 .portfolio1 .items .item:hover{background-position: bottom;}
 
 
-/* (2) */
+/* (2)이미지삽입을 이용한 방법 */
 .portfolio2 .items{
   display: flex;
   justify-content: center;
@@ -55,14 +54,15 @@ hr{margin: 100px 0;}
   width: inherit;
   height: inherit;
 }
-.portfolio2 .items .item img {
+.portfolio2 .items .item a img{
   width: inherit;
   height: inherit;
   object-fit: cover;
   object-position: top;
   transition: 1s;
 }
-.portfolio2 .items .item:hover img {object-position: bottom;}
+.portfolio2 .items .item:hover a img{object-position: bottom;}
+
 
 /* (3) */
 .pc-mockup{
@@ -71,114 +71,113 @@ hr{margin: 100px 0;}
   height: 650px;
   margin: auto;
 }
-.pc-mockup h1 {
-	text-align: center;
+.pc-mockup h1{
+  position: relative;
+  text-align: center;
 	font-weight: 500;
 	font-size: 36px;
-	letter-spacing: -2px;
-	position: relative;
-	padding-bottom: 30px;
+  padding-bottom: 30px;
   margin-bottom: 30px;
 }
-.pc-mockup h1:after {
-	content: '';
-	position: absolute;
-	width: 100px;
+.pc-mockup h1:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
 	height: 5px;
 	background-color: crimson;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 0;
 }
 .screen{
   /* border: 1px solid red; */
   height: 450px;
   border-radius: 10px;
-	overflow: hidden;
+  overflow: hidden;
 }
-.screen-frame {
-  /* border: 1px solid blue; */
-  width: inherit;  /* 700px */
-	height: 390px;
+.screen .screen-frame{
+  border: 1px solid blue;
+  width: inherit; 
+  height: 390px;
   background-color: #000;
   position: relative;
   overflow: hidden;
 }
-.screen-logo {
-	height: 60px;
-	background-color: lightgray;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.screen .screen-logo{
+  height: 60px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.screen-logo img {width: 40px;}
+.screen .screen-logo img{width: 40px;}
 
 .stand{
+  position: relative;
   border-bottom: 80px solid lightgray;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	height: 0;
-	width: 180px;
-	margin: auto;
-	position: relative;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  height: 0;
+  width: 180px;
+  margin: auto;
 }
-.stand:before {  /* 위쪽 가로선 */
-	content: '';
-	position: absolute;
-	background-color: #b1b0b0;
-	height: 8px;
+.stand:before{  /* 위쪽 가로선 */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0; 
+  height: 8px;
 	width: 153px;
+  background-color: #b1b0b0;
   clip-path: polygon(1% 0%, 99% 2%, 100% 100%, 0% 100%);
   transform: translateX(-1.5px);
 }
-.stand:after {   /* 아래쪽 가로선 */
-	content: '';
-	position: absolute;
-	background-color: lightgray;
-	width: 220px;
+.stand:after{   /* 아래쪽 가로선 */
+  content: '';
+  position: absolute;
+  bottom: -85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
 	height: 5px;
-	border-radius: 5px;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: -85px;
+  background-color: lightgray;
+  border-radius: 5px;
 }
 
 .screen-frame .iframe-url{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: calc(100% - 50px);
-  height: calc(100% - 50px);
+  height: calc(100% - 50px);;
   position: absolute;
-	top: 50%;
+  top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-.screen-frame .iframe-url img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: top;
-	transition: 2s;
+.screen-frame .iframe-url img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: 2s;
 }
 
-.caption-link {
-	background-color: LightSlateGray;
-	color: #fff;
-	position: absolute;
+.screen-frame .caption-link{
+  position: absolute;
 	bottom: 50px;
 	right: 50px;
+  background-color: LightSlateGray;
+	color: #fff;	
 	font-size: 12px;
 	padding: 5px 15px;
-	border-radius: 30px;
-	/* transform: translateY(100px); */
-	opacity: 0;
-	transition: 0.7s;
-	transition-delay: 0.5s;
+  border-radius: 30px;
+  opacity: 0;
+  /* transform: translateY(100px); */
+  transition: 0.7s;
+  transition-delay: 0.8s;
 }
 
-.screen:hover .screen-frame .iframe-url img {
-	object-position: bottom;
-}
-.screen:hover .screen-frame .caption-link {
-	opacity: 1;
-	/* transform: translateY(0); */
+.screen:hover .screen-frame .iframe-url img{object-position: bottom;}
+.screen:hover .screen-frame .caption-link{
+  opacity: 1;
+  /* transform: translateY(0); */
 }
