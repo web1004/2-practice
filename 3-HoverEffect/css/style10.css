@@ -1,24 +1,24 @@
 @import url(reset.css);
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-* {
-  font-family: "Montserrat", sans-serif;
-  box-sizing: border-box;
-}
+*{box-sizing: border-box;}
 body{
-  font-size: 15px;
-  line-height: 1.5;
-  color: #222;
-  display: grid;
-  place-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  background-color: #eee; 
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* 변수선언 */
 :root{
   --borderColor: crimson;
-  --borderSize: 1px;
+  --borderSize: 1px
 }
 
+/* *:모든 태그를 뜻하는 선택자 */
 section *,
 section *:before,
 section *:after{
@@ -26,22 +26,20 @@ section *:after{
 }
 .item-group{
   counter-reset: num;
-  /* display: flex; */
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 50px;
+  display: flex;
+  column-gap: 70px;
 }
 .item{
-  border: 1px solid #eee;
+  position: relative;
+  border: 1px solid #aaaaaa;
   width: 250px;
   height: 250px;
-  position: relative;
 }
 .item:before{
   content: '0' counter(num) '.';
   counter-increment: num;
   position: absolute;
-  top: -30px;
+  top: -25px;
   right: 0;
 }
 .item:after{
@@ -50,14 +48,13 @@ section *:after{
   top: 0;
   left: -30px;
   /* transform: rotate(90deg);
-  transform-origin: top left; */
+  transform-origin: bottom left; */
   writing-mode: vertical-rl;
 }
 .item-hover{
+  position: relative;
   width: inherit;
   height: inherit;
-  /* aspect-ratio: 1/1; */
-  position: relative;
 }
 .item-hover span{
   /* border: 1px solid #000; */
@@ -79,8 +76,8 @@ section *:after{
   position: absolute;
   top: 0;
   left: 0;
-  height: 10px;
   width: var(--borderSize);
+  height: 10px; 
   background-color: var(--borderColor);
 }
 .item-hover span:nth-of-type(2):before{
@@ -97,13 +94,13 @@ section *:after{
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 10px;
   width: var(--borderSize);
+  height: 10px; 
   background-color: var(--borderColor);
 }
 
 .item-hover a{
-   border: 1px solid blue; 
+  /* border: 1px solid rgba(0,0,0,0.3);  */
   position: absolute;
   width: 90%;
   height: 90%;
@@ -112,28 +109,14 @@ section *:after{
   transform: translate(-50%,-50%);
 }
 .item-hover a img{
-  /* border: 1px solid red; */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
-
 
 /* Hover Effect */
-.item-hover:hover span:nth-of-type(1):before{
-  width: 100%;
-}
-.item-hover:hover span:nth-of-type(1):after{
-  height: 100%;
-}
-.item-hover:hover span:nth-of-type(2):before{
-  width: 100%;
-}
-.item-hover:hover span:nth-of-type(2):after{
-  height: 100%;
-}
-.item:hover{
-  /* border: none; */
-  border-color: transparent;
-}
+.item-hover:hover span:nth-of-type(1):before{width: 100%;}
+.item-hover:hover span:nth-of-type(1):after{height: 100%;}
+.item-hover:hover span:nth-of-type(2):before{width: 100%;}
+.item-hover:hover span:nth-of-type(2):after{height: 100%;}
+.item:hover{border-color: transparent;}
